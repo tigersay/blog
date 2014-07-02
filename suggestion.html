@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="css/fankui.css" media="screen" type="text/css" />
+
+<script type="text/javascript">
+	  function closeFlag()
+	  {
+	  	var ad=document.getElementById('flag');
+	  	ad.style.display='none';
+	  }
+	</script>
+<title>反馈</title>
+</head>
+
+<body onclick="closeFlag()">
+
+	<div class="container">
+		<form id="contact" action="suggestion" method="post">
+			<h3>����</h3>
+			<h4></h4>
+			<fieldset>
+				<input type="text" name="name" tabindex="1" placeholder="����">
+			</fieldset>
+			<fieldset>
+				<input type="email" name="email" tabindex="2" placeholder="����">
+			</fieldset>
+			<fieldset>
+				<textarea name="content" placeholder="����..." tabindex="5" required autofocus></textarea> 
+			</fieldset>
+			<fieldset>
+				<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">�ύ</button>
+			</fieldset>
+		</form>
+
+	</div>
+	
+	
+
+	<%
+		String flag = (String)request.getAttribute("flag");
+		if(flag != null){
+	%>
+		<div id="flag" style="font-size:25px;width:250px;height:50px;margin:10px auto;text-align: center;color: green;" onclick="this.style.display = 'none'">�������ύ��лл��</div>
+	<%	
+		}	
+	%>
+
+
+	
+
+
+
+</body>
+</html>
