@@ -1,0 +1,83 @@
+	/*常用的清除CSS默认样式代码*/
+	body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, pre, fieldset, 
+	lengend, button, input, textarea, th, td
+	{ 
+		margin: 0;
+		padding: 0;
+	}
+	
+	body{
+		/**background:#99cbbb; -**/
+		background: #e4ebe9 url(../img/pattern.png) repeat top left;
+	}
+	
+	#container {
+		width: 100%;
+	}
+	
+	
+	#gamelist {
+		width: 976px;
+		height: 100%;
+		/*background-color: #abcdef; */
+		margin: 10px auto;
+		border-radius: 2px;
+		overflow: hidden;
+	}
+	
+	.game {
+		background-color: #fff;  /*#EEEEEE*/
+		width: 300px;
+		height: 400px;
+		float: left;
+		margin: 30px 12px 20px;
+		padding-top: 0px;
+		border-radius: 1px;
+		cursor:pointer;  /*鼠标经过时显示手型*/
+	}
+	
+	.gameimg {
+		text-align: center;
+		margin: 25px 5px;
+	}
+	
+	.gamename {
+		text-align: center;
+		margin: 5px 5px;
+		font-size: 25px;
+		margin-bottom: 20px;
+		text-shadow: 0px 1px 1px #e4ebe9;
+	}
+	
+	.gamelabel{
+		margin-top: 30px;
+		margin-left: 30px;
+		margin-right: 30px;
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+	
+	
+	.gameinfo{
+		margin-top: 5px;
+		margin-left: 30px;
+		margin-right: 30px;
+		margin-bottom: 10px;
+		/*border: 10px solid #b0ccc6;*/
+		font-size: 15px;
+		
+	}
+	
+	
+	#footer {
+		background-color: #99bbbb;
+		clear: both;
+		text-align: center;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	
+	
+	
+	

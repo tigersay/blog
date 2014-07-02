@@ -1,0 +1,61 @@
+	
+	* { 
+		margin: 0;
+		padding: 0;
+	}
+	
+	#header {
+		background-color: #cfcfef;
+		height: 50px;
+		margin: auto auto;
+		
+	}
+	
+	#title{
+		width: 80px;
+		height: 60px;
+		float: left;
+		line-height: 60px;
+		text-align: center;
+	}
+	
+	#daohang{
+		margin: 2px;
+		padding: 0px;
+		float:left;
+		position: relative;
+		bottom: 0px;
+		left: 200px; 
+	}
+	
+	#daohang li {
+		list-style:none;
+		float:left;
+		width:70px;
+		/*background-color:#666;*/
+		text-align:center;
+		color:#FFF;
+		padding:6px 8px;
+	}
+	#daohang a {
+		text-decoration: none;
+		font-weight:normal;
+		text-shadow: 0px 1px 1px #e4ebe9;
+		color: #000;
+		display: block;/*a标签转块级元素*/
+		padding: 6px 0px;
+		font-size: 18px;
+		font-weight: 650;
+		/*border-right:solid 1px #000000; */ /*右边的边框 ---这个用来显示标签之间的分隔竖线*/
+	}
+	#daohang a:hover {
+		 color: #222222;
+		 border-bottom:solid 2px #000000;
+	}
+	
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+	
