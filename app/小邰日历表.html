@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>2009年8月2日上午写于三坝雅苑</title>
+<script language="javascript">
+    function cumt(){
+        //得到输入的年和月
+        var yyyy = document.all.year.value;
+        var mm = document.all.month.value;
+        //得到该年该月的天数和第一天是星期几
+        var number = getNumber(yyyy,mm);
+        var day = getDay(yyyy,mm);
+        //清空日历表
+        clearTable();
+        //填充日历表
+        calendar(number,day);
+    }
+    
+    //生成日历
+    function calendar(number,day){
+        var i = 1;
+        var j = day;
+        for(var x=1;x<=number;x++){
+            document.getElementById('dateTable').rows[i].cells[j].innerHTML = "<font color='black'>"+x+"</font>";
+            if(j==6){
+                i = i+1;
+                j = 0;
+            }else{
+                j = j+1;
+            }
+        }
+    }
+    
+    //清空日历表
+    function clearTable(){
+        for(var i=1;i<7;i++){
+            for(var j=0;j<7;j++){
+                document.getElementById('dateTable').rows[i].cells[j].innerHTML ="";
+                document.getElementById('dateTable').rows[i].cells[j].bgColor="";   
+            }
+        }
+    }
+    
+    
+    //根据年月判断该月第一天是星期几
+    function getDay(yyyy,mm){
+        var firstdate = new Date(yyyy,mm,1);
+        return firstdate.getDay();
+    }
+    
+    //根据年月求天数
+    function getNumber(yyyy,mm){
+        var number=31;
+        switch (parseInt(mm))
+        {
+            case 0:
+            case 2:
+            case 4:
+            case 6:
+            case 7:
+            case 9:
+            case 11:
+                number = 31;
+                break;
+            case 3:
+            case 5:
+            case 8:
+            case 10:
+                number = 30;
+                break;
+            default:
+                if(yyyy%400==0||(yyyy%4==0&&yyyy%100!=0)){
+                    number = 29;
+                }else{
+                    number = 28;
+                }
+        }
+        return number;
+    }
+</script>
+</head>
+
+<body bgcolor="teal" onload="cumt()">
+<center><font color="black" size="5">小邰日历表</font><br>
+<br><br>
+年:
+<select name="year">
+    <option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option>
+    <option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option>
+    <option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option>
+    <option value="2018">2018</option><option value="2019">2019</option>
+</select> 
+
+&nbsp;
+月:<select name="month">
+    <option value="0">一月</option><option value="1">二月</option><option value="2">三月</option>
+    <option value="3">四月</option><option value="4">五月</option><option value="5">六月</option>
+    <option value="6">七月</option><option value="7" selected="selected">八月</option><option value="8">九月</option>
+    <option value="9">十月</option><option value="10">十一月</option><option value="11">十二月</option>
+</select> &nbsp;
+<input type="button" value="确定" onclick="cumt()">
+<br><br>
+<hr color="#005B5B">
+<div id="date" >
+    <br>
+    <table id="dateTable" border="1" bordercolor="#00D500" cellpadding="7" align="center">
+        <tr>
+            <td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td>
+        </tr>
+        <script language="javascript">
+            for(var i=0;i<6;i++){
+                document.write("<tr>");
+                for(var j=0;j<7;j++){
+                    document.write("<td onclick='change(this)'>");
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+    <br>
+</div> 
+<hr color="#005B5B">
+Don't mix days,careful days mix you!
+</center>
+</body>
+<script type="text/javascript">
+    //改变方格的颜色
+    function change(obj){
+        if(obj.innerHTML==""){
+            return;
+        }
+        if(obj.bgColor==""){
+            obj.bgColor="#8080FF";   
+        }else{
+            obj.bgColor="";   
+        }
+    }
+</script>
+</html>
+

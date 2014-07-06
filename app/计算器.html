@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<title>计算器</title>
+</head>
+
+
+<body bgcolor="Silver">
+<center>
+All world will give way to you,if you know where is you go.
+<hr>
+
+<span id = "dengyu" style="color: green;font-size: xx-large"></span> 
+<span id = "tai" style="color: green;font-size: xx-large"></span>  
+<span id = "math" style="color: green;font-size: xx-large"></span> 
+<span id = "cumt" style="color: green;font-size: xx-large"></span>
+
+<hr>
+<br>
+
+<table>
+  <tr>
+    <td><input type = "button" style="width:25px" value = "1"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "2"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "3"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "+"  onclick="mathClk(this)"> </td>
+  </tr>
+  <tr>
+    <td><input type = "button" style="width:25px" value = "4"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "5"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "6"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "-"  onclick="mathClk(this)"> </td>
+  </tr>
+  <tr>
+    <td><input type = "button" style="width:25px" value = "7"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "8"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "9"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "*"  onclick="mathClk(this)"> </td>
+  </tr>
+   <tr>
+    <td><input type = "button" style="width:25px" value = "0"  onclick="numClk(this)"> </td>
+    <td><input type = "button" style="width:25px" value = "="  onclick="resultClk()"> </td>
+    <td><input type = "button" style="width:25px" value = "邰"  onclick="writ()"> </td>
+    <td><input type = "button" style="width:25px" value = "/"  onclick="mathClk(this)"> </td>
+  </tr>
+  </table>
+  <br><br>
+  <hr>
+  <span id = "hangzhou" style="font-size: large;font: normal;"></span>
+  
+</center>
+</body>
+
+<script type="text/javascript">
+
+ var span_cumt = document.getElementById("cumt");
+ var span_tai = document.getElementById("tai");
+ var span_math = document.getElementById("math");
+ var span_dengyu = document.getElementById("dengyu");
+ var span_hangzhou = document.getElementById("hangzhou");
+
+ //数字按钮的点击事件
+ function numClk(obj){
+  span_cumt.innerHTML = span_cumt.innerHTML + obj.value; 
+ }
+ 
+ //加减乘除按钮的点击事件
+ function mathClk(obj){
+  if(span_tai.innerHTML == ""){
+   span_tai.innerHTML = span_cumt.innerHTML; 
+  }
+  span_cumt.innerHTML = "";
+  span_math.innerHTML = obj.value; 
+  span_dengyu.innerHTML = "";
+ }
+
+ //等号按钮的点击事件
+ function resultClk(){
+  span_hangzhou.innerHTML = span_hangzhou.innerHTML + "<br>" + span_tai.innerHTML + " " + span_math.innerHTML + " "  + span_cumt.innerHTML +" = ";
+  var jieguo = eval(span_tai.innerHTML + span_math.innerHTML + span_cumt.innerHTML);
+  span_hangzhou.innerHTML = span_hangzhou.innerHTML + jieguo;
+  
+  span_tai.innerHTML = jieguo;
+  span_cumt.innerHTML = "";
+  span_math.innerHTML = "";
+  span_dengyu.innerHTML = "=";
+ }
+ 
+ //小数点按钮的点击事件
+ function writ(){
+  span_dengyu.innerHTML = "";
+  span_tai.innerHTML = "";
+  span_math.innerHTML = "";
+  span_cumt.innerHTML = "";
+  span_hangzhou.innerHTML = "";
+ }
+</script>
+
+</html>
+
