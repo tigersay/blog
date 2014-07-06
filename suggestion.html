@@ -19,34 +19,25 @@
 
 	<div class="container">
 		<form id="contact" action="suggestion" method="post">
-			<h3>����</h3>
+			<h3>建议意见</h3>
 			<h4></h4>
 			<fieldset>
-				<input type="text" name="name" tabindex="1" placeholder="����">
+				<input type="text" name="name" tabindex="1" placeholder="你的名字">
 			</fieldset>
 			<fieldset>
-				<input type="email" name="email" tabindex="2" placeholder="����">
+				<input type="email" name="email" tabindex="2" placeholder="你的邮箱">
 			</fieldset>
 			<fieldset>
-				<textarea name="content" placeholder="����..." tabindex="5" required autofocus></textarea> 
+				<textarea name="content" placeholder="建议..." tabindex="5" required autofocus></textarea> 
 			</fieldset>
 			<fieldset>
-				<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">�ύ</button>
+				<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">提交</button>
 			</fieldset>
 		</form>
 
 	</div>
 	
 	
-
-	<%
-		String flag = (String)request.getAttribute("flag");
-		if(flag != null){
-	%>
-		<div id="flag" style="font-size:25px;width:250px;height:50px;margin:10px auto;text-align: center;color: green;" onclick="this.style.display = 'none'">�������ύ��лл��</div>
-	<%	
-		}	
-	%>
 
 
 	
