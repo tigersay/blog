@@ -1,22 +1,22 @@
 
-/*µÚ5¸öÓÎÏ·---mapleÊıÑ§Èí¼ş*/
+/*ç¬¬5ä¸ªæ¸¸æˆ---mapleæ•°å­¦è½¯ä»¶*/
 function game_6(){
 
 	var labels = new Array();
 	var gezis = new Array();
-	var drag_label ; //µ±Ç°ÕıÔÚÍÏ¶¯µÄ±êÇ©
+	var drag_label ; //å½“å‰æ­£åœ¨æ‹–åŠ¨çš„æ ‡ç­¾
 
 	this.logic = function(){
 		for(var i = 0; i < labels.length;i++){
 			var l = labels[i];
 			l.logic();
 		}
-		//ÍÏ×§±êÇ©
+		//æ‹–æ‹½æ ‡ç­¾
 		if(drag_label != null){
 			drag_label.x += (mx - lmx);
 			drag_label.y += (my - lmy);			
 			lmx = mx;
-			lmy = my;  //ÔÚÕâÀïÉèÖÃÉÏÒ»´ÎÍÏ¶¯´¦ÀíµÄÎ»ÖÃ¡£
+			lmy = my;  //åœ¨è¿™é‡Œè®¾ç½®ä¸Šä¸€æ¬¡æ‹–åŠ¨å¤„ç†çš„ä½ç½®ã€‚
 			if(isUpRect(game_x , game_y , game_w, game_h)){
 				for(var j = 0; j < gezis.length; j++){
 					var gezi = gezis[j];
@@ -40,7 +40,7 @@ function game_6(){
 
 	this.paint = function(){
 	
-		paintTitle("mapleÊıÑ§Èí¼ş");
+		paintTitle("mapleæ•°å­¦è½¯ä»¶");
 		
 		//draw block
 		context.fillStyle = "rgb(110,180,120)";
@@ -67,11 +67,11 @@ function game_6(){
 		}
 		context.fillStyle = "rgb(70,10,30)";
 		context.font = "14px serif";
-		context.fillText("ÌáÊ¾£ºÒÆ¶¯Êı×Öµ½·½¸ñÄÚ£¬Ê¹µÃºá¡¢×İ¡¢Ğ±£¬ÈıÌõÏßÉÏÊı×ÖÖ®ºÍ¾ùÎª15!", game_x + 60, game_y + 560);
+		context.fillText("æç¤ºï¼šç§»åŠ¨æ•°å­—åˆ°æ–¹æ ¼å†…ï¼Œä½¿å¾—æ¨ªã€çºµã€æ–œï¼Œä¸‰æ¡çº¿ä¸Šæ•°å­—ä¹‹å’Œå‡ä¸º15!", game_x + 60, game_y + 560);
 	}
 	
 
-	//¶¨ÒåÃûÆ¬label¶ÔÏó
+	//å®šä¹‰åç‰‡labelå¯¹è±¡
 	var Label = function(x,y,value){  
 		this.x = x; this.y = y; 
 		this.value = value;
@@ -88,7 +88,7 @@ function game_6(){
 	
 
 		this.logic = function(){
-			if(isDownRect(game_x + this.x, game_y + this.y, this.size, this.size)){ //Èç¹ûµãÖĞÁË
+			if(isDownRect(game_x + this.x, game_y + this.y, this.size, this.size)){ //å¦‚æœç‚¹ä¸­äº†
 					drag_label = this;
 					lmx = dx;
 					lmy = dy;

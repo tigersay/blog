@@ -1,6 +1,6 @@
 
 /*
-* »­Ö±Ïß
+* ç”»ç›´çº¿
 */
 function drawLine(x1,y1,x2,y2){
 	context.beginPath();
@@ -12,7 +12,7 @@ function drawLine(x1,y1,x2,y2){
 
 
 /*
-* »­¶ÔºÅ --- ´«µÄ²ÎÊýÊÇµ×µã×ø±ê
+* ç”»å¯¹å· --- ä¼ çš„å‚æ•°æ˜¯åº•ç‚¹åæ ‡
 */
 function drawDui(x,y){
 	context.beginPath();
@@ -25,7 +25,7 @@ function drawDui(x,y){
 }
 
 /*
-* »­´íºÅ --- ´«µÄ²ÎÊýÊÇµÚÒ»¸öµ×µã×ø±ê
+* ç”»é”™å· --- ä¼ çš„å‚æ•°æ˜¯ç¬¬ä¸€ä¸ªåº•ç‚¹åæ ‡
 */
 function drawCuo(x,y){
 	context.beginPath();
@@ -38,7 +38,7 @@ function drawCuo(x,y){
 }
 
 /*
-* ÅÐ¶ÏÄ³¸öµãÊÇ·ñÔÚÄ³¸ö¾ØÐÎÄÚ
+* åˆ¤æ–­æŸä¸ªç‚¹æ˜¯å¦åœ¨æŸä¸ªçŸ©å½¢å†…
 */
 function isPointInRect(px,py, rx,ry,rw,rh){
 	if(px >= rx && px <= rx + rw && py >= ry && py <= ry + rh){return true;}
@@ -46,7 +46,7 @@ function isPointInRect(px,py, rx,ry,rw,rh){
 }
 
 /*
-* Ìî³äÒ»¸öÔ²
+* å¡«å……ä¸€ä¸ªåœ†
 */
 function fillArc(x,y,r){
 	context.beginPath();
@@ -56,7 +56,7 @@ function fillArc(x,y,r){
 }
 
 /*
-* »­Ò»¸öÔ²
+* ç”»ä¸€ä¸ªåœ†
 */
 function drawArc(x,y,r){
 	context.beginPath();
@@ -65,13 +65,13 @@ function drawArc(x,y,r){
 	context.stroke();
 }
 
-//ÅÐ¶ÏµãÊÇ·ñÔÚÔ²ÄÚ£¬ax¡¢ayÊÇÔ²ÐÄ
+//åˆ¤æ–­ç‚¹æ˜¯å¦åœ¨åœ†å†…ï¼Œaxã€ayæ˜¯åœ†å¿ƒ
 function isPointInArc(px,py,ax,ay,ar)
 {
 	return (px - ax) * (px - ax) + (py - ay) * (py - ay) < ar * ar;
 }
 
-//ÅÐ¶Ï·½¿éÊÇ·ñÔÚÔ²ÄÚ£¬px¡¢pyÊÇ¾ØÐÎ×óÉÏ½Ç, ax¡¢ayÊÇÔ²ÐÄ
+//åˆ¤æ–­æ–¹å—æ˜¯å¦åœ¨åœ†å†…ï¼Œpxã€pyæ˜¯çŸ©å½¢å·¦ä¸Šè§’, axã€ayæ˜¯åœ†å¿ƒ
 function isRectInArc(px,py,pw,ph,ax,ay,ar)
 {
 	if(isPointInArc(px,py,ax,ay,ar) == false)return false;
@@ -81,7 +81,7 @@ function isRectInArc(px,py,pw,ph,ax,ay,ar)
 	return true;
 }
 
-	/*»­Ò»¸öËµ»°µÄ¿ò£¬ÓÐ¼ýÍ·Ö¸ÏòÏÂ·½µÄËµ»°ÈË*/
+	/*ç”»ä¸€ä¸ªè¯´è¯çš„æ¡†ï¼Œæœ‰ç®­å¤´æŒ‡å‘ä¸‹æ–¹çš„è¯´è¯äºº*/
 	function paintKuang(x, y, w, h){
 		context.beginPath();
 		context.moveTo(x,y);
@@ -96,7 +96,7 @@ function isRectInArc(px,py,pw,ph,ax,ay,ar)
 		context.stroke();
 	}
 
-	/*»­Ò»¸öÈËËµµÄ»°*/
+	/*ç”»ä¸€ä¸ªäººè¯´çš„è¯*/
 	function paintSay(x, y, w, h, texts)
 	{
 		paintKuang(x, y, w, h);

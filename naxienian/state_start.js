@@ -1,32 +1,32 @@
 
-/*¿ªÊ¼½çÃæ*/
+/*å¼€å§‹ç•Œé¢*/
 function state_start(){
 
 	var labels = new Array();
-	var drag_label ; //µ±Ç°ÕıÔÚÍÏ¶¯µÄ±êÇ©
+	var drag_label ; //å½“å‰æ­£åœ¨æ‹–åŠ¨çš„æ ‡ç­¾
 
 	this.logic = function(){
 		for(var i = labels.length - 1; i >= 0; i--){
 			var l = labels[i];
 			l.logic();
 		}
-		//ÍÏ×§±êÇ©
+		//æ‹–æ‹½æ ‡ç­¾
 		if(drag_label != null){
 			drag_label.x += (mx - lmx);
 			drag_label.y += (my - lmy);			
 			lmx = mx;
-			lmy = my;  //ÔÚÕâÀïÉèÖÃÉÏÒ»´ÎÍÏ¶¯´¦ÀíµÄÎ»ÖÃ¡£
+			lmy = my;  //åœ¨è¿™é‡Œè®¾ç½®ä¸Šä¸€æ¬¡æ‹–åŠ¨å¤„ç†çš„ä½ç½®ã€‚
 			if(isUpRect(game_x , game_y , game_w, game_h)){
 					drag_label = null;
 			}
 		}
 		
-		//Èç¹ûµãµ½ÁË¿ªÊ¼ÓÎÏ·°´Å¥
+		//å¦‚æœç‚¹åˆ°äº†å¼€å§‹æ¸¸æˆæŒ‰é’®
 		if(isUpRect(game_x + 440, game_y + 500, 100, 40)){
 			game_state = 1;
 			resetUpPointer();
 		}
-		//Èç¹ûµãµ½ÁËabout°´Å¥
+		//å¦‚æœç‚¹åˆ°äº†aboutæŒ‰é’®
 		if(isUpRect(game_x + 560, game_y + 500, 100, 40)){
 			for(var i = 0; i < labels.length;i++){
 				var l = labels[i];
@@ -41,14 +41,14 @@ function state_start(){
 			labels[i].paint();
 		}
 		
-		//»­Ò»¸öºáÌõ
+		//ç”»ä¸€ä¸ªæ¨ªæ¡
 		context.fillStyle = "rgb(150,200,150)";
 		context.fillRect(game_x + 120, game_y + 500, 560, 40);
 		context.fillStyle = "rgb(10,20,18)";
 		context.font = "italic 20px serif";
 		context.strokeText("No Ball, No We!", game_x + 180, game_y + 526);
 
-		//»­°´Å¥ -- start
+		//ç”»æŒ‰é’® -- start
 		if(isMoveRect(game_x + 440, game_y + 500, 100, 40)){
 			context.fillStyle = "rgb(100,240,100)";
 		}else{
@@ -70,7 +70,7 @@ function state_start(){
 		context.fillText("about", game_x + 596, game_y + 524);
 		
 		//show about 
-		//µãÁËabout°´Å¥ºó£¬ËùÓĞ±êÇ©¿ªÊ¼ÏûÊ§¡£¡£ÏûÊ§Íê£¬¾Í»á´¥·¢ÆÁÄ»ÖĞ¼äÏÔÊ¾Ò»¶Î»°¡£¡£
+		//ç‚¹äº†aboutæŒ‰é’®åï¼Œæ‰€æœ‰æ ‡ç­¾å¼€å§‹æ¶ˆå¤±ã€‚ã€‚æ¶ˆå¤±å®Œï¼Œå°±ä¼šè§¦å‘å±å¹•ä¸­é—´æ˜¾ç¤ºä¸€æ®µè¯ã€‚ã€‚
 		if(labels.length == 0){
 			context.fillStyle = "rgb(0,0,0)"
 			context.font = "20px serif";
@@ -91,10 +91,10 @@ function state_start(){
 	
 	var counter = 550;
 
-	//¶¨ÒåÃûÆ¬label¶ÔÏó
-	var Label = function(x,y,name,sex,width){  //sexÎª0±íÊ¾ÄĞ£¬Îª1±íÊ¾Å®
+	//å®šä¹‰åç‰‡labelå¯¹è±¡
+	var Label = function(x,y,name,sex,width){  //sexä¸º0è¡¨ç¤ºç”·ï¼Œä¸º1è¡¨ç¤ºå¥³
 		this.x = x; this.y = y; 
-		//jsºÃÆæ¹Ö£¬Èç¹ûÉÏÃæÕâÒ»ĞĞ²»×¢ÊÍµô£¬ÔÚÏÂÃæµÄ´úÂëÀï£¬xºÍthis.xËùÖ¸Ê¾µÄ½«²»ÊÇÍ¬Ò»¸ö¶ÔÏó£¬£¬²»Ğ¡ĞÄ¾Í»á³ö´í¡£¡£
+		//jså¥½å¥‡æ€ªï¼Œå¦‚æœä¸Šé¢è¿™ä¸€è¡Œä¸æ³¨é‡Šæ‰ï¼Œåœ¨ä¸‹é¢çš„ä»£ç é‡Œï¼Œxå’Œthis.xæ‰€æŒ‡ç¤ºçš„å°†ä¸æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œï¼Œä¸å°å¿ƒå°±ä¼šå‡ºé”™ã€‚ã€‚
 		
 		this.paint = function(){
 			context.fillStyle = "rgb(0,160,100)"
@@ -108,17 +108,17 @@ function state_start(){
 		}
 
 	
-		this.disappear = false; //ÊÇ·ñÕıÔÚÏûÊ§
-		var a = 1; //ÏûÊ§Ê±µÄ¼ÓËÙ¶È
+		this.disappear = false; //æ˜¯å¦æ­£åœ¨æ¶ˆå¤±
+		var a = 1; //æ¶ˆå¤±æ—¶çš„åŠ é€Ÿåº¦
 
 		this.logic = function(){
 			
 			if(this.disappear == false){
-				if(isDownRect(game_x + this.x, game_y + this.y, width, 40)){ //Èç¹ûµãÖĞÁË
-					if(isRight){  //ÓÒ¼üµã»÷¾Í¿ªÊ¼ÏûÊ§
+				if(isDownRect(game_x + this.x, game_y + this.y, width, 40)){ //å¦‚æœç‚¹ä¸­äº†
+					if(isRight){  //å³é”®ç‚¹å‡»å°±å¼€å§‹æ¶ˆå¤±
 						this.disappear = true;
 					}else{
-						//×ó¼üµÄ»°£¬Ö´ĞĞÍÏ×§
+						//å·¦é”®çš„è¯ï¼Œæ‰§è¡Œæ‹–æ‹½
 						drag_label = this;
 						lmx = dx;
 						lmy = dy;
@@ -130,7 +130,7 @@ function state_start(){
 				a ++;
 				if(sex == 0){
 					this.y += a;
-					if(this.y > game_h + 20){labels.splice(labels.indexOf(this),1);} //splics·½·¨´ÓµÚÒ»¸ö²ÎÊı±íÊ¾µÄË÷ÒıÉ¾Æğ£¬É¾³ıµÄÊıÄ¿ÓÉµÚ¶ş¸ö²ÎÊıÈ·¶¨¡£
+					if(this.y > game_h + 20){labels.splice(labels.indexOf(this),1);} //splicsæ–¹æ³•ä»ç¬¬ä¸€ä¸ªå‚æ•°è¡¨ç¤ºçš„ç´¢å¼•åˆ èµ·ï¼Œåˆ é™¤çš„æ•°ç›®ç”±ç¬¬äºŒä¸ªå‚æ•°ç¡®å®šã€‚
 				}else{
 					this.y -= a;
 					if(this.y < - 60){labels.splice(labels.indexOf(this),1);}
@@ -144,42 +144,42 @@ function state_start(){
 	labels.push(new Label(510, 70, "tiger", 0, 60));
 	labels.push(new Label(300, 70, "linda", 1, 60));
 	labels.push(new Label(455, 260, "lee", 0, 40));
-	labels.push(new Label(300, 150, "Ğ¡ÒË", 1, 60));
+	labels.push(new Label(300, 150, "å°å®œ", 1, 60));
 	labels.push(new Label(510, 310, "Bliss7", 0, 60));
 	labels.push(new Label(245, 260, "joy", 1, 40));
-	labels.push(new Label(390, 340, "ºà", 0, 33));
-	labels.push(new Label(300, 110, "ÈıÁÖ", 1, 60));
+	labels.push(new Label(390, 340, "äº¨", 0, 33));
+	labels.push(new Label(300, 110, "ä¸‰æ—", 1, 60));
 
-	labels.push(new Label(510, 110, "É½¼¦", 0, 60));
+	labels.push(new Label(510, 110, "å±±é¸¡", 0, 60));
 	labels.push(new Label(510, 270, "johnny", 0, 60));
-	labels.push(new Label(445, 70, "Äª×Ó", 0, 60));
-	labels.push(new Label(220, 300, "ÄÁ", 1, 33));
+	labels.push(new Label(445, 70, "è«å­", 0, 60));
+	labels.push(new Label(220, 300, "ç‰§", 1, 33));
 	labels.push(new Label(300, 190, "ziteng", 1, 60));
 	labels.push(new Label(300, 270, "maple", 1, 60));
 	
-	labels.push(new Label(230, 220, "ÍÁ¶¹", 1, 60));
-	labels.push(new Label(170, 70, "¸ßÃÃ", 1, 60));
-	labels.push(new Label(185, 180, "ÇçÌìÍŞÍŞ", 1, 90));
-	labels.push(new Label(235, 70, "ÓÄ¾²", 1, 60));
+	labels.push(new Label(230, 220, "åœŸè±†", 1, 60));
+	labels.push(new Label(170, 70, "é«˜å¦¹", 1, 60));
+	labels.push(new Label(185, 180, "æ™´å¤©å¨ƒå¨ƒ", 1, 90));
+	labels.push(new Label(235, 70, "å¹½é™", 1, 60));
 	
 	labels.push(new Label(470, 390, "Happy603", 0, 93));
-	labels.push(new Label(395, 180, "Äş¾²ÖÂÔ¶", 0, 90));
+	labels.push(new Label(395, 180, "å®é™è‡´è¿œ", 0, 90));
 	labels.push(new Label(510, 230, "cloud", 0, 60));
 	
-	labels.push(new Label(380, 70, "´ó»Æ·ä", 0, 60));
-	labels.push(new Label(450, 430, "°ÍÈûÂŞÄÇ", 0, 90));
+	labels.push(new Label(380, 70, "å¤§é»„èœ‚", 0, 60));
+	labels.push(new Label(450, 430, "å·´å¡ç½—é‚£", 0, 90));
 	labels.push(new Label(510, 350, "kenry", 0, 60));
-	labels.push(new Label(510, 190, "Ğ¡Äª", 0, 60));
+	labels.push(new Label(510, 190, "å°è«", 0, 60));
 	
-	labels.push(new Label(300, 230, "Ò»Ğİ", 1, 60));
+	labels.push(new Label(300, 230, "ä¸€ä¼‘", 1, 60));
 	labels.push(new Label(300, 310, "elaine", 1, 60));
-	labels.push(new Label(300, 350, "ÇàÄş", 1, 60));
-	labels.push(new Label(270, 390, "¿§·ÈÓï²è", 1, 90));
-	labels.push(new Label(230, 430, "¾ıÁÙÌìÏÂ", 1, 90));
-	labels.push(new Label(510, 150, "ÇàÊ¯°å", 0, 60));
+	labels.push(new Label(300, 350, "é’å®", 1, 60));
+	labels.push(new Label(270, 390, "å’–å•¡è¯­èŒ¶", 1, 90));
+	labels.push(new Label(230, 430, "å›ä¸´å¤©ä¸‹", 1, 90));
+	labels.push(new Label(510, 150, "é’çŸ³æ¿", 0, 60));
 	
-	labels.push(new Label(180, 340, "ÏĞ", 1, 33));
-	labels.push(new Label(440, 220, "º£Ñó", 0, 60));
+	labels.push(new Label(180, 340, "é—²", 1, 33));
+	labels.push(new Label(440, 220, "æµ·æ´‹", 0, 60));
 	labels.push(new Label(430, 300, "DJ", 0, 40));
 	
 	

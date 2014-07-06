@@ -1,5 +1,5 @@
 
-/*¶ş»¨ÒªºÈ¾Æ*/
+/*äºŒèŠ±è¦å–é…’*/
 function game_8(){
 
 	var state = 0;
@@ -15,12 +15,12 @@ function game_8(){
 			z.logic();
 		}
 		
-		//ÍÏ×§¾ÆÖÑ
+		//æ‹–æ‹½é…’ç›…
 		if(drag_zhong != null){
 			drag_zhong.x += (mx - lmx);
 			drag_zhong.y += (my - lmy);			
 			lmx = mx;
-			lmy = my;  //ÔÚÕâÀïÉèÖÃÉÏÒ»´ÎÍÏ¶¯´¦ÀíµÄÎ»ÖÃ¡£
+			lmy = my;  //åœ¨è¿™é‡Œè®¾ç½®ä¸Šä¸€æ¬¡æ‹–åŠ¨å¤„ç†çš„ä½ç½®ã€‚
 			if(isUpRect(game_x , game_y , game_w, game_h)){
 					drag_zhong = null;
 			}
@@ -60,7 +60,7 @@ function game_8(){
 				resetDownPointer();
 			}
 			break;
-		case 8:  //Ğ¡Ñà×Ó³öÏÖ
+		case 8:  //å°ç‡•å­å‡ºç°
 			if(xiaoyanzi.x < 75)xiaoyanzi.x += 5;
 			if(isDownGameView() && xiaoyanzi.x >= 75){
 				state ++;
@@ -90,12 +90,12 @@ function game_8(){
 			}
 			break;
 		case 12:
-			jiu_buchong(); //¾ÆµÄ²¹³ä»úÖÆ
+			jiu_buchong(); //é…’çš„è¡¥å……æœºåˆ¶
 			for(var i = 0; i < mans.length;i++){
 				var m = mans[i];
 				if(m.zuile() == false)return;
 			}
-			state ++;	//Áù¸öÈË¶¼×íÁËÒÔºó£¬½øÈëµ½ÏÂÒ»×´Ì¬£¬Ğ¡Ñà×Ó¼ÌĞø³öÏÖ¡£¡£
+			state ++;	//å…­ä¸ªäººéƒ½é†‰äº†ä»¥åï¼Œè¿›å…¥åˆ°ä¸‹ä¸€çŠ¶æ€ï¼Œå°ç‡•å­ç»§ç»­å‡ºç°ã€‚ã€‚
 			zhongs[0].x = 20; 
 			zhongs[1].x = 20; 
 			zhongs[2].x = 20; 
@@ -117,7 +117,7 @@ function game_8(){
 			}
 			break;
 		case 15:
-			jiu_buchong(); //¾ÆµÄ²¹³ä»úÖÆ
+			jiu_buchong(); //é…’çš„è¡¥å……æœºåˆ¶
 			zhongs[1].x = 100; 
 			zhongs[1].y = 100; 
 			if(xiaoyanzi.zuile()){
@@ -165,31 +165,31 @@ function game_8(){
 		case 1:
 			hua.paint();
 			qi.paint();
-			var texts = ["¶ş»¨£¬¹ıÀ´Ò¹Ïü¡£"];
+			var texts = ["äºŒèŠ±ï¼Œè¿‡æ¥å¤œå®µã€‚"];
 			paintSay(game_x + 460, game_y + 325, 180, 80, texts);  
 			break;
 		case 2:
 			hua.paint();
 			qi.paint();
-			var texts = ["Õâ¶¼°ëÒ¹Ò»µãÁË¡£", "ÎÒ×¼±¸Ë¯ÁË¡£¡£"];
+			var texts = ["è¿™éƒ½åŠå¤œä¸€ç‚¹äº†ã€‚", "æˆ‘å‡†å¤‡ç¡äº†ã€‚ã€‚"];
 			paintSay(game_x + 150, game_y + 325, 190, 80, texts); 
 			break;
 		case 3:
 			hua.paint();
 			qi.paint();
-			var texts = ["À´Âï£¬¸çÏëºÈ¾ÆÁË¡£", "¿¾ÓãÀÏµØ·½£¬¿ìµã¡£¡£"];
+			var texts = ["æ¥å˜›ï¼Œå“¥æƒ³å–é…’äº†ã€‚", "çƒ¤é±¼è€åœ°æ–¹ï¼Œå¿«ç‚¹ã€‚ã€‚"];
 			paintSay(game_x + 460, game_y + 325, 180, 80, texts);  
 			break;
 		case 4:
 			hua.paint();
 			qi.paint();
-			var texts = ["ºÃ..", "ÎÒÏÖÔÚ´ò³µ¹ıÈ¥.", "Äãº°ÏÂÁíÍâ¼¸¸ö¡£"];
+			var texts = ["å¥½..", "æˆ‘ç°åœ¨æ‰“è½¦è¿‡å».", "ä½ å–Šä¸‹å¦å¤–å‡ ä¸ªã€‚"];
 			paintSay(game_x + 150, game_y + 300, 190, 100, texts); 
 			break;
 		case 5:
 			hua.paint();
 			qi.paint();
-			var texts = ["(¼ÌĞøµç»°º°ÈË¡£¡£)"];
+			var texts = ["(ç»§ç»­ç”µè¯å–Šäººã€‚ã€‚)"];
 			paintSay(game_x + 460, game_y + 325, 180, 80, texts);  
 			break;
 		case 6:
@@ -213,21 +213,21 @@ function game_8(){
 			paintTable();
 			paintMan();
 			xiaoyanzi.paint();
-			var texts = ["Õâ°ï¾Æ¹í¡£¡£", "ÓÖ¿ªÊ¼ÁË¡£¡£"];
+			var texts = ["è¿™å¸®é…’é¬¼ã€‚ã€‚", "åˆå¼€å§‹äº†ã€‚ã€‚"];
 			paintSay(game_x + 50, game_y + 420, 120, 80, texts);  
 			break;
 		case 10:
 			paintTable();
 			paintMan();
 			xiaoyanzi.paint();
-			var texts = ["Ğ¡Ñà×Ó£¬ÎÒÃÇÒªºÈ¾Æ£¡£¡£¡"];
+			var texts = ["å°ç‡•å­ï¼Œæˆ‘ä»¬è¦å–é…’ï¼ï¼ï¼"];
 			paintSay(game_x + 300, game_y + 100, 210, 60, texts);  
 			break;
 		case 11:
 			paintTable();
 			paintMan();
 			xiaoyanzi.paint();
-			var texts = ["(ÍÏ¶¯ÉÏÃæµÄ¾ÆÖÑ)", "(¸øËûÃÇ¹à¾Æ°É¡£¡£)", "ÎÒÈ¥¸øÄãÃÇ×ö¸öÅÄÇà¹Ï¡£¡£"];
+			var texts = ["(æ‹–åŠ¨ä¸Šé¢çš„é…’ç›…)", "(ç»™ä»–ä»¬çŒé…’å§ã€‚ã€‚)", "æˆ‘å»ç»™ä½ ä»¬åšä¸ªæ‹é’ç“œã€‚ã€‚"];
 			paintSay(game_x + 10, game_y + 400, 200, 100, texts);  
 			break;
 		case 12:
@@ -247,7 +247,7 @@ function game_8(){
 			paintTable();
 			paintMan();
 			xiaoyanzi.paint();
-			var texts = ["Ñ½£¬È«¶¼×íÁË¡£", "ÎÒ¶¼»¹Ã»ºÈÄØ¡£"];
+			var texts = ["å‘€ï¼Œå…¨éƒ½é†‰äº†ã€‚", "æˆ‘éƒ½è¿˜æ²¡å–å‘¢ã€‚"];
 			paintSay(game_x + 50, game_y + 420, 130, 80, texts);  
 			break;
 		case 15:
@@ -261,8 +261,8 @@ function game_8(){
 			xiaoyanzi.paint();
 			
 			context.font = "15px serif";
-			context.fillText("ËùÓĞÈË¶¼×íÁË..", game_x + 300, game_y + 475);
-			context.fillText("ÕâÊ±£¬Ä¾Éú»ğ²¿³¤´ÓÅÔ±ß¾­¹ı..", game_x + 300, game_y + 495);
+			context.fillText("æ‰€æœ‰äººéƒ½é†‰äº†..", game_x + 300, game_y + 475);
+			context.fillText("è¿™æ—¶ï¼Œæœ¨ç”Ÿç«éƒ¨é•¿ä»æ—è¾¹ç»è¿‡..", game_x + 300, game_y + 495);
 			break;
 		case 17:
 			paintTable();
@@ -270,7 +270,7 @@ function game_8(){
 			xiaoyanzi.paint();
 			
 			context.font = "15px serif";
-			context.fillText("tiger, Ò»ÏÂ¾ÆĞÑÁË..", game_x + 300, game_y + 475);
+			context.fillText("tiger, ä¸€ä¸‹é…’é†’äº†..", game_x + 300, game_y + 475);
 			break;
 		case 18:
 			paintTable();
@@ -278,7 +278,7 @@ function game_8(){
 			xiaoyanzi.paint();
 			
 			context.font = "15px serif";
-			context.fillText("ÖÚÈË½Ô×íÎÒ¶ÀĞÑ£¡", game_x + 300, game_y + 475);
+			context.fillText("ä¼—äººçš†é†‰æˆ‘ç‹¬é†’ï¼", game_x + 300, game_y + 475);
 			break;
 		case 19:
 			paintTable();
@@ -286,8 +286,8 @@ function game_8(){
 			xiaoyanzi.paint();
 			
 			context.font = "15px serif";
-			context.fillText("´Ó´Ë,½­ºşÉÏÁ÷´«×Å..", game_x + 300, game_y + 475);
-			context.fillText("tiger¹àµ¹ÁËÒ»×À×ÓµÄ´«Ææ..", game_x + 300, game_y + 495);
+			context.fillText("ä»æ­¤,æ±Ÿæ¹–ä¸Šæµä¼ ç€..", game_x + 300, game_y + 475);
+			context.fillText("tigerçŒå€’äº†ä¸€æ¡Œå­çš„ä¼ å¥‡..", game_x + 300, game_y + 495);
 			
 			paintBackLevel();
 			break;
@@ -311,7 +311,7 @@ function game_8(){
 		context.strokeRect(game_x + 300, game_y + 250, 200, 100);
 		if(state == 6 || state == 7){
 			context.font = "18px serif";
-			context.fillText("ºş±ß¿¾Óã", game_x + 360, game_y + 305);
+			context.fillText("æ¹–è¾¹çƒ¤é±¼", game_x + 360, game_y + 305);
 		}
 	}
 	
@@ -350,11 +350,11 @@ function game_8(){
 	
 	var hua = new man(220, 450, "Lee", 50, 1);
 	var qi = new man(520, 450, "Bliss7", 70, 1);
-	var banfeng = new man(-70, 200, "°ë·è", 60, 1);
-	var longshu = new man(800, 200, "ÁúÊå", 60, 1);
-	var yu = new man(-70, 280, "Óİ", 50, 1);
+	var banfeng = new man(-70, 200, "åŠç–¯", 60, 1);
+	var longshu = new man(800, 200, "é¾™å”", 60, 1);
+	var yu = new man(-70, 280, "è™", 50, 1);
 	var tiger = new man(800, 280, "tiger", 60, 1);
-	var xiaoyanzi = new man(-70, 540, "Ğ¡Ñà×Ó", 70, 1);
+	var xiaoyanzi = new man(-70, 540, "å°ç‡•å­", 70, 1);
 	
 	var mans = [hua,qi,banfeng,longshu,yu,tiger];
 	
@@ -372,12 +372,12 @@ function game_8(){
 		this.logic = function(){
 			
 			if(this.x > 0 && this.y >= 0)this.hasIn = true;
-			//Èç¹û½øÈë¹ıÓÎÏ·ÆÁÄ»£¬²¢ÇÒµ±Ç°ÅÜ³öÁËÓÎÏ·ÇøÓò£¬ÔòÉ¾³ıµôËü
+			//å¦‚æœè¿›å…¥è¿‡æ¸¸æˆå±å¹•ï¼Œå¹¶ä¸”å½“å‰è·‘å‡ºäº†æ¸¸æˆåŒºåŸŸï¼Œåˆ™åˆ é™¤æ‰å®ƒ
 			if(this.hasIn && isPointInRect(this.x, this.y , 0, 0, game_w + 10, game_h + 10) == false){
 				jius.splice(jius.indexOf(this),1);
 				return;
 			}
-			//Èç¹ûÅöµ½ÁË¾ÆÖÑ£¬·´ÉäÖ®
+			//å¦‚æœç¢°åˆ°äº†é…’ç›…ï¼Œåå°„ä¹‹
 			if(isPointInRect(this.x, this.y , zhongs[0].x, zhongs[0].y, 60, 20))
 			{
 				this.jiaodu = 0 - this.jiaodu;
@@ -390,7 +390,7 @@ function game_8(){
 			{
 				this.jiaodu =  Math.PI * 7 / 4;
 			}
-			//Èç¹ûÅöµ½ÁËÈË
+			//å¦‚æœç¢°åˆ°äº†äºº
 			for(var i = 0; i < mans.length; i++){
 				if(isPointInRect(this.x, this.y, mans[i].x, mans[i].y, mans[i].w, 40)){
 					mans[i].hejiu();
@@ -424,7 +424,7 @@ function game_8(){
 			jius.push(new Jiu(0 - 10 * index, 0 - 10 * index, Math.PI / 4));
 		}
 	}
-	//¾ÆµÄ²¹³ä»úÖÆ
+	//é…’çš„è¡¥å……æœºåˆ¶
 	function jiu_buchong()
 	{
 		if(jius.length <= 10){

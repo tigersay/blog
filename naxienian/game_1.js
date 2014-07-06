@@ -1,5 +1,5 @@
 
-/*��һ����Ϸ---Ⱥ��С����*/
+/*第一个游戏---群情小考验*/
 function game_1(){
 
 	var questions = new Array();
@@ -36,7 +36,7 @@ function game_1(){
 		}
    		context.fillStyle = "rgb(10,20,20)";
    		context.font = "18px serif";
-		context.fillText("���", game_x + 350, game_y + 560);
+		context.fillText("打分", game_x + 350, game_y + 560);
 		//back main menu
 		if(isDownRect(game_x + 340, game_y + 540, 60, 30)){
 			enter();
@@ -70,7 +70,7 @@ function game_1(){
 		
 		this.logic = function()
 		{
-			if(isDownRect(game_x + x, game_y + y, w, 40)){  //�����
+			if(isDownRect(game_x + x, game_y + y, w, 40)){  //点击后
 				if(this.select == false){
 					var i = answers.indexOf(this) + 1;
 					for (var index = 0; index < 4; index++) {
@@ -100,11 +100,11 @@ function game_1(){
 	}
 	
 	
-	questions.push(new Question(100, 100, "1, 小花是男是女？", new Array("��", "Ů", "���з�Ů", "����˵"), new Array(30,30,80,60)));
-	questions.push(new Question(100, 180, "2, ˭û����Ⱥ����", new Array("����", "joy", "linda", "tiger"), new Array(40,40,55,55)));
-	questions.push(new Question(100, 260, "3, Ī�Ӻ�СĪ��ɶ��ϵ��", new Array("�ֵ�", "����", "ͬѧ", "����"), new Array(40,40,40,40)));
-	questions.push(new Question(100, 340, "4, �ĸ��һ��ɱ���ͣ�", new Array("��", "johnny", "С��", "��ʯ��"), new Array(30,70,40,55)));
-	questions.push(new Question(100, 420, "5, ȥ��Ⱥ�ڱ����һ���ǣ�", new Array("linda", "ɽ��", "ССţ", "��������"), new Array(55,40,55,80)));
+	questions.push(new Question(100, 100, "1, 小花是男是女？", new Array("男", "女", "非男非女", "不好说"), new Array(30,30,80,60)));
+	questions.push(new Question(100, 180, "2, 谁没做过群主？", new Array("海洋", "joy", "linda", "tiger"), new Array(40,40,55,55)));
+	questions.push(new Question(100, 260, "3, 莫子和小莫是啥关系？", new Array("兄弟", "室友", "同学", "球友"), new Array(40,40,40,40)));
+	questions.push(new Question(100, 340, "4, 哪个家伙扣杀最猛？", new Array("亨", "johnny", "小宜", "青石板"), new Array(30,70,40,55)));
+	questions.push(new Question(100, 420, "5, 去年群内比赛第一名是？", new Array("linda", "山鸡", "小小牛", "巴塞罗那"), new Array(55,40,55,80)));
 
 
 	var flags = new Array();
@@ -137,7 +137,7 @@ function game_1(){
 		}
 		context.fillStyle = "rgb(210,20,80)";
    		context.font = "45px serif";
-		context.fillText(fenshu + "��", game_x + 600, game_y + 560);
+		context.fillText(fenshu + "分", game_x + 600, game_y + 560);
 	}
 	
 	

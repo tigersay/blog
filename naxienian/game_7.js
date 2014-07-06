@@ -1,5 +1,5 @@
 
-/*Ñ°ÕÒ×ÏÌÙÄ¾*/
+/*å¯»æ‰¾ç´«è—¤æœ¨*/
 function game_7(){
 
 	var labels = new Array();
@@ -18,7 +18,7 @@ function game_7(){
 	}
 
 	this.paint = function(){
-		paintTitle("Ñ°ÕÒ×ÏÌÙÄ¾");
+		paintTitle("å¯»æ‰¾ç´«è—¤æœ¨");
 		btn.paint();
 		//paint label
 		for(var i = 0; i < labels.length;i++){
@@ -27,8 +27,8 @@ function game_7(){
 		paintBackLevel();
 		context.fillStyle = "rgb(70,10,30)";
 		context.font = "14px serif";
-		context.fillText("ÈıÁÖÍ¬Ñ§ÓĞÁù¸ùÄ¾Í·£¬×¼±¸ÓÃÆäÖĞµÄ×ÏÌÙÄ¾×öÓğÃ«ÇòÅÄ! µ«·Ö²»ÇåÄÄÒ»¸ùÊÇ×ÏÌÙÄ¾¡£¡£", game_x + 60, game_y + 540);
-		context.fillText("ÓÚÊÇÈÃËüÃÇ¸÷ËµÁËÒ»¾ä»°£¬ÒÑÖªÖ»ÓĞ×ÏÌÙÄ¾ËµµÄÊÇ¼Ù»°£¬ÇëÄã°ïÈıÁÖÕÒ³ö×ÏÌÙÄ¾À´¡£¡£", game_x + 60, game_y + 560);
+		context.fillText("ä¸‰æ—åŒå­¦æœ‰å…­æ ¹æœ¨å¤´ï¼Œå‡†å¤‡ç”¨å…¶ä¸­çš„ç´«è—¤æœ¨åšç¾½æ¯›çƒæ‹! ä½†åˆ†ä¸æ¸…å“ªä¸€æ ¹æ˜¯ç´«è—¤æœ¨ã€‚ã€‚", game_x + 60, game_y + 540);
+		context.fillText("äºæ˜¯è®©å®ƒä»¬å„è¯´äº†ä¸€å¥è¯ï¼Œå·²çŸ¥åªæœ‰ç´«è—¤æœ¨è¯´çš„æ˜¯å‡è¯ï¼Œè¯·ä½ å¸®ä¸‰æ—æ‰¾å‡ºç´«è—¤æœ¨æ¥ã€‚ã€‚", game_x + 60, game_y + 560);
 	
 		if(hascheck){
 			if(ok){
@@ -42,7 +42,7 @@ function game_7(){
 
 	
 	
-	//¶¨ÒåÊ÷Ä¾
+	//å®šä¹‰æ ‘æœ¨
 	var Label = function(x,y,text,index){  
 		this.x = x; 
 		this.y = y; 
@@ -63,7 +63,7 @@ function game_7(){
 	
 
 		this.logic = function(){
-			if(isDownRect(game_x + this.x, game_y + this.y, this.w, this.h)){ //Èç¹ûµãÖĞÁË
+			if(isDownRect(game_x + this.x, game_y + this.y, this.w, this.h)){ //å¦‚æœç‚¹ä¸­äº†
 					if(focusLabel != null)focusLabel.focus = false;
 					focusLabel = this;
 					focusLabel.focus = true;
@@ -75,8 +75,8 @@ function game_7(){
 	
 	var focusLabel;
 	
-	var names = ["A: ÈıÁÖºÜ´ÏÃ÷", "B£ºzitengºÜ´ÏÃ÷", "C£ºAËµµÄ¶Ô", "D£ºziteng´òÇò²»´í",
-		"E£ºziteng²»Ö»´ÏÃ÷£¬¶øÇÒ´òÇò²»´í","F£ºÎÒÊÇÈıÁÖ"];
+	var names = ["A: ä¸‰æ—å¾ˆèªæ˜", "Bï¼šzitengå¾ˆèªæ˜", "Cï¼šAè¯´çš„å¯¹", "Dï¼šzitengæ‰“çƒä¸é”™",
+		"Eï¼šzitengä¸åªèªæ˜ï¼Œè€Œä¸”æ‰“çƒä¸é”™","Fï¼šæˆ‘æ˜¯ä¸‰æ—"];
 	
 	for(var i = 0; i < 6; i ++)
 	{
@@ -96,7 +96,7 @@ function game_7(){
 	}
 	
 	/*
-	* °´Å¥¶ÔÏó
+	* æŒ‰é’®å¯¹è±¡
 	*/
 	var Button = function(x, y, text, w)
 	{

@@ -1,5 +1,5 @@
 
-/*µÚ4¸öÓÎÏ·---Ã»ÊÂÌ×¸öÈ¦*/
+/*ç¬¬4ä¸ªæ¸¸æˆ---æ²¡äº‹å¥—ä¸ªåœˆ*/
 function game_4(){
 
 	this.logic = function(){
@@ -12,7 +12,7 @@ function game_4(){
 	}
 
 	this.paint = function(){
-		paintTitle("Ã»ÊÂÌ×¸öÈ¦");
+		paintTitle("æ²¡äº‹å¥—ä¸ªåœˆ");
 		
 		context.fillStyle = "rgb(250,20,250)";
 		context.arc(100, 100, 100, 0, Math.PI * 2, false);
@@ -33,7 +33,7 @@ function game_4(){
 		this.x = 250;
 		this.y = 480;
 		this.r = 80;
-		this.action = 0; //0´ıÃü£¬1£¬ÉÏÉı£¬2£¬ÏÂÂä
+		this.action = 0; //0å¾…å‘½ï¼Œ1ï¼Œä¸Šå‡ï¼Œ2ï¼Œä¸‹è½
 		this.a = 1;
 		
 		this.logic = function(){
@@ -66,7 +66,7 @@ function game_4(){
 	
 	
 	/*
-	* °´Å¥¶ÔÏó
+	* æŒ‰é’®å¯¹è±¡
 	*/
 	var Button = function(x, y, text, w)
 	{
@@ -115,7 +115,7 @@ function game_4(){
 					y = 500 - catchNum * 40;
 					fenshu += fenzhi[index];
 					quan.action = 2;
-					pause(1000); //½çÃæÔİÍ£Ò»»á¡£¡£
+					pause(1000); //ç•Œé¢æš‚åœä¸€ä¼šã€‚ã€‚
 				}
 				else if(x <= - 2 * w){
 					var index = gifts.indexOf(this);
@@ -124,7 +124,7 @@ function game_4(){
 					}
 					gifts.splice(index, 1);
 				}
-				x -= sudu; //ÒÆ¶¯
+				x -= sudu; //ç§»åŠ¨
 		}
 		
 		this.paint = function()
@@ -138,7 +138,7 @@ function game_4(){
 	
 	}
 	
-	var names = ["Æß¼ú", "ÁùÄª", "ÎåÓİ", "ËÄºà","ÈıÁÖ","¶ş»¨","Ğ¡ÒË"];
+	var names = ["ä¸ƒè´±", "å…­è«", "äº”è™", "å››äº¨","ä¸‰æ—","äºŒèŠ±","å°å®œ"];
 	
 	var gifts = new Array();
 	for(var i = 0; i < 7; i ++){
@@ -147,14 +147,14 @@ function game_4(){
 	gifts[6].go = true;
 	
 	
-	//´ò·Ö
+	//æ‰“åˆ†
 	var fenzhi = [28, 25, 20, 15, 8, 3, 1];
 	var fenshu = 0;
 	
 	function showJieguo(){
 		context.fillStyle = "rgb(210,20,80)";
    		context.font = "45px serif";
-		context.fillText(fenshu + "·Ö", game_x + 600, game_y + 560);
+		context.fillText(fenshu + "åˆ†", game_x + 600, game_y + 560);
 	}
 }
 

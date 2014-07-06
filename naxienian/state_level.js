@@ -1,5 +1,5 @@
 
-/*¹Ø¿¨½çÃæ*/
+/*å…³å¡ç•Œé¢*/
 function state_level(){
 	
 	var levels = new Array();
@@ -32,10 +32,10 @@ function state_level(){
 	}
 	
 	
-	var Level = function(x, y, name, index){ //index:µ±Ç°ÊÇµÚ¼¸¹Ø
+	var Level = function(x, y, name, index){ //index:å½“å‰æ˜¯ç¬¬å‡ å…³
 		
 		this.logic = function(){
-			if(isDownRect(game_x + x, game_y + y, 200, 40)){  //Èç¹ûÊó±êµã»÷ÔÚ¸Ã¹Ø¿¨ÉÏ
+			if(isDownRect(game_x + x, game_y + y, 200, 40)){  //å¦‚æœé¼ æ ‡ç‚¹å‡»åœ¨è¯¥å…³å¡ä¸Š
 				game_state = 2;
 				if(index == 1)state_game = new game_1();
 				if(index == 2)state_game = new game_2();
@@ -52,7 +52,7 @@ function state_level(){
 		
 		this.paint = function(){
 			context.fillStyle = "rgb(110,180,120)";
-			if(isMoveRect(game_x + x, game_y + y, 200, 40)){  //Èç¹ûÊó±êĞüÍ£ÔÚ¸Ã¹Ø¿¨ÉÏ
+			if(isMoveRect(game_x + x, game_y + y, 200, 40)){  //å¦‚æœé¼ æ ‡æ‚¬åœåœ¨è¯¥å…³å¡ä¸Š
 				context.fillStyle = "rgb(110,200,140)";
 			}
    			context.fillRect(game_x + x, game_y + y, 200, 40);
@@ -62,8 +62,8 @@ function state_level(){
 		}
 	}
 	
-	var names = ["1£¬ÈºÇéÖª¶àÉÙ", "2£¬ÈçºÎÀ´´òÇò", "3£¬ÄĞÅ®·Ö·Ö¿´", "4£¬Ã»ÊÂÌ×¸öÈ¦", 
-		"5£¬johnnyÓğÇò¿ÎÌÃ", "6£¬mapleÊıÑ§Èí¼ş", "7£¬Ñ°ÕÒ×ÏÌÙÄ¾", "8£¬2013ÄêµÄ¿¾Óã"];  //±ØĞë±£Ö¤´óĞ¡ÎªÅ¼Êı
+	var names = ["1ï¼Œç¾¤æƒ…çŸ¥å¤šå°‘", "2ï¼Œå¦‚ä½•æ¥æ‰“çƒ", "3ï¼Œç”·å¥³åˆ†åˆ†çœ‹", "4ï¼Œæ²¡äº‹å¥—ä¸ªåœˆ", 
+		"5ï¼Œjohnnyç¾½çƒè¯¾å ‚", "6ï¼Œmapleæ•°å­¦è½¯ä»¶", "7ï¼Œå¯»æ‰¾ç´«è—¤æœ¨", "8ï¼Œ2013å¹´çš„çƒ¤é±¼"];  //å¿…é¡»ä¿è¯å¤§å°ä¸ºå¶æ•°
 	for (var index = 0; index < names.length - 1; index+= 2) {
 		levels.push(new Level(133, 50 + 30 * index, names[index], index + 1));
 		levels.push(new Level(460, 50 + 30 * index, names[index + 1], index + 2));

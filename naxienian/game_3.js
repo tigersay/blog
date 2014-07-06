@@ -1,21 +1,21 @@
 
-/*µÚ3¸öÓÎÏ·---ÄĞÅ®·Ö·Ö¿´*/
+/*ç¬¬3ä¸ªæ¸¸æˆ---ç”·å¥³åˆ†åˆ†çœ‹*/
 function game_3(){
 
 	var labels = new Array();
-	var drag_label ; //µ±Ç°ÕıÔÚÍÏ¶¯µÄ±êÇ©
+	var drag_label ; //å½“å‰æ­£åœ¨æ‹–åŠ¨çš„æ ‡ç­¾
 
 	this.logic = function(){
 		for(var i = 0; i < labels.length;i++){
 			var l = labels[i];
 			l.logic();
 		}
-		//ÍÏ×§±êÇ©
+		//æ‹–æ‹½æ ‡ç­¾
 		if(drag_label != null){
 			drag_label.x += (mx - lmx);
 			drag_label.y += (my - lmy);			
 			lmx = mx;
-			lmy = my;  //ÔÚÕâÀïÉèÖÃÉÏÒ»´ÎÍÏ¶¯´¦ÀíµÄÎ»ÖÃ¡£
+			lmy = my;  //åœ¨è¿™é‡Œè®¾ç½®ä¸Šä¸€æ¬¡æ‹–åŠ¨å¤„ç†çš„ä½ç½®ã€‚
 			if(isUpRect(game_x , game_y , game_w, game_h)){
 					drag_label = null;
 			}
@@ -26,7 +26,7 @@ function game_3(){
 
 	this.paint = function(){
 	
-		paintTitle("ÄĞÅ®·Ö·Ö¿´");
+		paintTitle("ç”·å¥³åˆ†åˆ†çœ‹");
 		
 		//draw block
 		context.fillStyle = "rgb(110,180,120)";
@@ -48,7 +48,7 @@ function game_3(){
 		}
    		context.fillStyle = "rgb(10,20,20)";
    		context.font = "18px serif";
-		context.fillText("´ò·Ö", game_x + 350, game_y + 560);
+		context.fillText("æ‰“åˆ†", game_x + 350, game_y + 560);
 		//enter menu
 		if(isDownRect(game_x + 340, game_y + 540, 60, 30)){
 			enter();
@@ -60,10 +60,10 @@ function game_3(){
 	}
 	
 
-	//¶¨ÒåÃûÆ¬label¶ÔÏó
-	var Label = function(x,y,name,sex,width){  //sexÎª0±íÊ¾ÄĞ£¬Îª1±íÊ¾Å®
+	//å®šä¹‰åç‰‡labelå¯¹è±¡
+	var Label = function(x,y,name,sex,width){  //sexä¸º0è¡¨ç¤ºç”·ï¼Œä¸º1è¡¨ç¤ºå¥³
 		this.x = x; this.y = y; this.sex = sex;this.width = width;
-		//jsºÃÆæ¹Ö£¬Èç¹ûÉÏÃæÕâÒ»ĞĞ²»×¢ÊÍµô£¬ÔÚÏÂÃæµÄ´úÂëÀï£¬xºÍthis.xËùÖ¸Ê¾µÄ½«²»ÊÇÍ¬Ò»¸ö¶ÔÏó£¬£¬²»Ğ¡ĞÄ¾Í»á³ö´í¡£¡£
+		//jså¥½å¥‡æ€ªï¼Œå¦‚æœä¸Šé¢è¿™ä¸€è¡Œä¸æ³¨é‡Šæ‰ï¼Œåœ¨ä¸‹é¢çš„ä»£ç é‡Œï¼Œxå’Œthis.xæ‰€æŒ‡ç¤ºçš„å°†ä¸æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œï¼Œä¸å°å¿ƒå°±ä¼šå‡ºé”™ã€‚ã€‚
 		
 		this.paint = function(){
 			context.fillStyle = "rgb(10,10,100)"
@@ -79,8 +79,8 @@ function game_3(){
 	
 
 		this.logic = function(){
-			if(isDownRect(game_x + this.x, game_y + this.y, width, 40)){ //Èç¹ûµãÖĞÁË
-					//×ó¼üµÄ»°£¬Ö´ĞĞÍÏ×§
+			if(isDownRect(game_x + this.x, game_y + this.y, width, 40)){ //å¦‚æœç‚¹ä¸­äº†
+					//å·¦é”®çš„è¯ï¼Œæ‰§è¡Œæ‹–æ‹½
 					drag_label = this;
 					lmx = dx;
 					lmy = dy;
@@ -92,16 +92,16 @@ function game_3(){
 
 	
 
-	labels.push(new Label(420, 400, "µ¶×Ó", 0, 45));
+	labels.push(new Label(420, 400, "åˆ€å­", 0, 45));
 	labels.push(new Label(200, 450, "zhangtq", 0, 80));
-	labels.push(new Label(370, 450, "missÌï", 1, 90));
-	labels.push(new Label(125, 400, "ÁãÏÂ", 1, 45));
-	labels.push(new Label(200, 400, "±ùÀäÉ³Ä®", 0, 93));
+	labels.push(new Label(370, 450, "missç”°", 1, 90));
+	labels.push(new Label(125, 400, "é›¶ä¸‹", 1, 45));
+	labels.push(new Label(200, 400, "å†°å†·æ²™æ¼ ", 0, 93));
 	labels.push(new Label(300, 450, "Ivy", 1, 45));
-	labels.push(new Label(475, 450, "»¨Óë°®ÀöË¿", 1, 100));
+	labels.push(new Label(475, 450, "èŠ±ä¸çˆ±ä¸½ä¸", 1, 100));
 	labels.push(new Label(125, 450, "tom", 0, 45));
 	labels.push(new Label(300, 400, "HelloKitty", 1, 100));
-	labels.push(new Label(510, 400, "ÖĞÀë×Ó", 0, 70));
+	labels.push(new Label(510, 400, "ä¸­ç¦»å­", 0, 70));
 	
 	
 	var fenshu = 0;
@@ -125,7 +125,7 @@ function game_3(){
 	function showJieguo(){
 		context.fillStyle = "rgb(210,20,80)";
    		context.font = "45px serif";
-		context.fillText(fenshu + "·Ö", game_x + 600, game_y + 560);
+		context.fillText(fenshu + "åˆ†", game_x + 600, game_y + 560);
 	}
 	
 	
