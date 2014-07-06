@@ -1,31 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µ¹¼ÆÊ±ÅÆ-->Ï×¸ø×æ¹ú60´óÇì</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>å€’è®¡æ—¶ç‰Œ-->çŒ®ç»™ç¥–å›½60å¤§åº†</title>
 </head>
-<!--2009Äê9ÔÂ25ÈÕĞ´ÓÚº¼Öİ  -->
+<!--2009å¹´9æœˆ25æ—¥å†™äºæ­å·  -->
 
 <body onload="tai()" bgcolor="teal">
 
 <center>
 
-<font color="black" size="6" face="¿¬Ìå_GB2312">Ç§É½ÅÆµ¹¼ÆÊ±</font> <br><br>
-Ñ¡ÔñÄêÔÂÈÕ:
-<select id = "t_year" name = "t_year" onchange="change()"></select>Äê
-<select id = "t_month" name = "t_month" onchange="change()"></select>ÔÂ
-<select id = "t_day" name = "t_day"></select>ÈÕ
-<input type = "button" value="È·¶¨" onclick="wu()">
+<font color="black" size="6" face="æ¥·ä½“_GB2312">åƒå±±ç‰Œå€’è®¡æ—¶</font> <br><br>
+é€‰æ‹©å¹´æœˆæ—¥:
+<select id = "t_year" name = "t_year" onchange="change()"></select>å¹´
+<select id = "t_month" name = "t_month" onchange="change()"></select>æœˆ
+<select id = "t_day" name = "t_day"></select>æ—¥
+<input type = "button" value="ç¡®å®š" onclick="wu()">
 <br><br>
-¾àÀë£º<span id="target"></span> &nbsp;»¹ÓĞ£º<br>
+è·ç¦»ï¼š<span id="target"></span> &nbsp;è¿˜æœ‰ï¼š<br>
 <hr color="#005B5B">
 <br><br><br><br>
 
 <font style="font-size: 100px">
-<span style="color: fuchsia" id="day"></span>Ìì
-<span style="color: fuchsia" id="hour"></span>Ğ¡Ê±
-<span style="color: fuchsia" id="minute"></span>·Ö
-<span style="color: fuchsia" id="second"></span>Ãë
+<span style="color: fuchsia" id="day"></span>å¤©
+<span style="color: fuchsia" id="hour"></span>å°æ—¶
+<span style="color: fuchsia" id="minute"></span>åˆ†
+<span style="color: fuchsia" id="second"></span>ç§’
 </font>
 
 <br><br><br><br><br><br><br>
@@ -35,19 +35,19 @@ The time is so quickly that we should must treasure it.
 </body>
 
 <script type="text/javascript">
-	//Ä¿±êÄêÔÂÈÕ
+	//ç›®æ ‡å¹´æœˆæ—¥
 	var y = 2009;
 	var m = 10;
 	var d = 1;
-	//Ä¿±êÈÕÆÚÏÔÊ¾
-	document.getElementById('target').innerHTML = y + "Äê" + m + "ÔÂ" + d + "ÈÕ";
-	//ÏÂÀ­¿ò¸³Öµ
+	//ç›®æ ‡æ—¥æœŸæ˜¾ç¤º
+	document.getElementById('target').innerHTML = y + "å¹´" + m + "æœˆ" + d + "æ—¥";
+	//ä¸‹æ‹‰æ¡†èµ‹å€¼
 	this.setSelect('t_year',2009,2019);
 	this.setSelect('t_month',1,12);
 	this.setSelect('t_day',1,31);
-	//Ñ¡ÖĞÊ®ÔÂ
+	//é€‰ä¸­åæœˆ
 	document.getElementById('t_month').options[9].selected = 'selected';
-	//µ¹¼ÆÊ±¼ÆËã
+	//å€’è®¡æ—¶è®¡ç®—
 	function tai(){
 		var date1 = new Date(y,m-1,d);
 		var date2 = new Date();
@@ -66,7 +66,7 @@ The time is so quickly that we should must treasure it.
 		setTimeout("tai()",1000);
 	}
 	
-	//¸øÏÂÀ­¿ò¸³Öµ
+	//ç»™ä¸‹æ‹‰æ¡†èµ‹å€¼
 	function setSelect(id,first,last){
 		var select = document.getElementById(id);
 		for(var i=select.length-1;i>=0;i--){
@@ -80,17 +80,17 @@ The time is so quickly that we should must treasure it.
 		}
 	}
 	
-	//¸üĞÂÄ¿±êÄêÔÂÈÕ
+	//æ›´æ–°ç›®æ ‡å¹´æœˆæ—¥
 	function wu(){
-		//Ä¿±êÄêÔÂÈÕ
+		//ç›®æ ‡å¹´æœˆæ—¥
 		y = document.all.t_year.value;
 		m = document.all.t_month.value;
 		d = document.all.t_day.value;
-		//Ä¿±êÈÕÆÚÏÔÊ¾
-		document.getElementById('target').innerHTML = y + "Äê" + m + "ÔÂ" + d + "ÈÕ";
+		//ç›®æ ‡æ—¥æœŸæ˜¾ç¤º
+		document.getElementById('target').innerHTML = y + "å¹´" + m + "æœˆ" + d + "æ—¥";
 	}
 	
-	//ÄêÔÂÏÂÀ­¿òchangeÊÂ¼ş
+	//å¹´æœˆä¸‹æ‹‰æ¡†changeäº‹ä»¶
 	function change(){
 		var yyyy = document.all.t_year.value;
 		var mm = document.all.t_month.value;
@@ -98,7 +98,7 @@ The time is so quickly that we should must treasure it.
 		this.setSelect("t_day",1,dCount);
 	}
 	
-	 //¸ù¾İÄêÔÂÇóÌìÊı
+	 //æ ¹æ®å¹´æœˆæ±‚å¤©æ•°
     function getNumber(yyyy,mm){
         var number=0;
         switch (parseInt(mm))

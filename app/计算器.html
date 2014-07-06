@@ -1,7 +1,7 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>¼ÆËãÆ÷</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>è®¡ç®—å™¨</title>
 </head>
 
 
@@ -40,7 +40,7 @@ All world will give way to you,if you know where is you go.
    <tr>
     <td><input type = "button" style="width:25px" value = "0"  onclick="numClk(this)"> </td>
     <td><input type = "button" style="width:25px" value = "="  onclick="resultClk()"> </td>
-    <td><input type = "button" style="width:25px" value = "Û¢"  onclick="writ()"> </td>
+    <td><input type = "button" style="width:25px" value = "é‚°"  onclick="writ()"> </td>
     <td><input type = "button" style="width:25px" value = "/"  onclick="mathClk(this)"> </td>
   </tr>
   </table>
@@ -59,12 +59,12 @@ All world will give way to you,if you know where is you go.
  var span_dengyu = document.getElementById("dengyu");
  var span_hangzhou = document.getElementById("hangzhou");
 
- //Êı×Ö°´Å¥µÄµã»÷ÊÂ¼ş
+ //æ•°å­—æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
  function numClk(obj){
   span_cumt.innerHTML = span_cumt.innerHTML + obj.value; 
  }
  
- //¼Ó¼õ³Ë³ı°´Å¥µÄµã»÷ÊÂ¼ş
+ //åŠ å‡ä¹˜é™¤æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
  function mathClk(obj){
   if(span_tai.innerHTML == ""){
    span_tai.innerHTML = span_cumt.innerHTML; 
@@ -74,7 +74,7 @@ All world will give way to you,if you know where is you go.
   span_dengyu.innerHTML = "";
  }
 
- //µÈºÅ°´Å¥µÄµã»÷ÊÂ¼ş
+ //ç­‰å·æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
  function resultClk(){
   span_hangzhou.innerHTML = span_hangzhou.innerHTML + "<br>" + span_tai.innerHTML + " " + span_math.innerHTML + " "  + span_cumt.innerHTML +" = ";
   var jieguo = eval(span_tai.innerHTML + span_math.innerHTML + span_cumt.innerHTML);
@@ -86,7 +86,7 @@ All world will give way to you,if you know where is you go.
   span_dengyu.innerHTML = "=";
  }
  
- //Ğ¡Êıµã°´Å¥µÄµã»÷ÊÂ¼ş
+ //å°æ•°ç‚¹æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
  function writ(){
   span_dengyu.innerHTML = "";
   span_tai.innerHTML = "";

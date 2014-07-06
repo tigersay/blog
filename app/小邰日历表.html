@@ -1,21 +1,22 @@
 <html>
 <head>
-<title>2009Äê8ÔÂ2ÈÕÉÏÎçĞ´ÓÚÈı°ÓÑÅÔ·</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>2009å¹´8æœˆ2æ—¥ä¸Šåˆå†™äºä¸‰åé›…è‹‘</title>
 <script language="javascript">
     function cumt(){
-        //µÃµ½ÊäÈëµÄÄêºÍÔÂ
+        //å¾—åˆ°è¾“å…¥çš„å¹´å’Œæœˆ
         var yyyy = document.all.year.value;
         var mm = document.all.month.value;
-        //µÃµ½¸ÃÄê¸ÃÔÂµÄÌìÊıºÍµÚÒ»ÌìÊÇĞÇÆÚ¼¸
+        //å¾—åˆ°è¯¥å¹´è¯¥æœˆçš„å¤©æ•°å’Œç¬¬ä¸€å¤©æ˜¯æ˜ŸæœŸå‡ 
         var number = getNumber(yyyy,mm);
         var day = getDay(yyyy,mm);
-        //Çå¿ÕÈÕÀú±í
+        //æ¸…ç©ºæ—¥å†è¡¨
         clearTable();
-        //Ìî³äÈÕÀú±í
+        //å¡«å……æ—¥å†è¡¨
         calendar(number,day);
     }
     
-    //Éú³ÉÈÕÀú
+    //ç”Ÿæˆæ—¥å†
     function calendar(number,day){
         var i = 1;
         var j = day;
@@ -30,7 +31,7 @@
         }
     }
     
-    //Çå¿ÕÈÕÀú±í
+    //æ¸…ç©ºæ—¥å†è¡¨
     function clearTable(){
         for(var i=1;i<7;i++){
             for(var j=0;j<7;j++){
@@ -41,13 +42,13 @@
     }
     
     
-    //¸ù¾İÄêÔÂÅĞ¶Ï¸ÃÔÂµÚÒ»ÌìÊÇĞÇÆÚ¼¸
+    //æ ¹æ®å¹´æœˆåˆ¤æ–­è¯¥æœˆç¬¬ä¸€å¤©æ˜¯æ˜ŸæœŸå‡ 
     function getDay(yyyy,mm){
         var firstdate = new Date(yyyy,mm,1);
         return firstdate.getDay();
     }
     
-    //¸ù¾İÄêÔÂÇóÌìÊı
+    //æ ¹æ®å¹´æœˆæ±‚å¤©æ•°
     function getNumber(yyyy,mm){
         var number=31;
         switch (parseInt(mm))
@@ -80,9 +81,9 @@
 </head>
 
 <body bgcolor="teal" onload="cumt()">
-<center><font color="black" size="5">Ğ¡Û¢ÈÕÀú±í</font><br>
+<center><font color="black" size="5">å°é‚°æ—¥å†è¡¨</font><br>
 <br><br>
-Äê:
+å¹´:
 <select name="year">
     <option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option>
     <option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option>
@@ -91,20 +92,20 @@
 </select> 
 
 &nbsp;
-ÔÂ:<select name="month">
-    <option value="0">Ò»ÔÂ</option><option value="1">¶şÔÂ</option><option value="2">ÈıÔÂ</option>
-    <option value="3">ËÄÔÂ</option><option value="4">ÎåÔÂ</option><option value="5">ÁùÔÂ</option>
-    <option value="6">ÆßÔÂ</option><option value="7" selected="selected">°ËÔÂ</option><option value="8">¾ÅÔÂ</option>
-    <option value="9">Ê®ÔÂ</option><option value="10">Ê®Ò»ÔÂ</option><option value="11">Ê®¶şÔÂ</option>
+æœˆ:<select name="month">
+    <option value="0">ä¸€æœˆ</option><option value="1">äºŒæœˆ</option><option value="2">ä¸‰æœˆ</option>
+    <option value="3">å››æœˆ</option><option value="4">äº”æœˆ</option><option value="5">å…­æœˆ</option>
+    <option value="6">ä¸ƒæœˆ</option><option value="7" selected="selected">å…«æœˆ</option><option value="8">ä¹æœˆ</option>
+    <option value="9">åæœˆ</option><option value="10">åä¸€æœˆ</option><option value="11">åäºŒæœˆ</option>
 </select> &nbsp;
-<input type="button" value="È·¶¨" onclick="cumt()">
+<input type="button" value="ç¡®å®š" onclick="cumt()">
 <br><br>
 <hr color="#005B5B">
 <div id="date" >
     <br>
     <table id="dateTable" border="1" bordercolor="#00D500" cellpadding="7" align="center">
         <tr>
-            <td>ÈÕ</td><td>Ò»</td><td>¶ş</td><td>Èı</td><td>ËÄ</td><td>Îå</td><td>Áù</td>
+            <td>æ—¥</td><td>ä¸€</td><td>äºŒ</td><td>ä¸‰</td><td>å››</td><td>äº”</td><td>å…­</td>
         </tr>
         <script language="javascript">
             for(var i=0;i<6;i++){
@@ -124,7 +125,7 @@ Don't mix days,careful days mix you!
 </center>
 </body>
 <script type="text/javascript">
-    //¸Ä±ä·½¸ñµÄÑÕÉ«
+    //æ”¹å˜æ–¹æ ¼çš„é¢œè‰²
     function change(obj){
         if(obj.innerHTML==""){
             return;
