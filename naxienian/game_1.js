@@ -1,5 +1,5 @@
 
-/*µÚÒ»¸öÓÎÏ·---ÈºÇéĞ¡¿¼Ñé*/
+/*ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ï·---Èºï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½*/
 function game_1(){
 
 	var questions = new Array();
@@ -13,7 +13,7 @@ function game_1(){
 
 	this.paint = function(){
 		
-		paintTitle("ÈºÇéÖª¶àÉÙ");
+		paintTitle("ç¾¤æƒ…çŸ¥å¤šå°‘");
 		
 		for (var index = 0; index < questions.length; index ++) {
 			questions[index].paint();
@@ -36,7 +36,7 @@ function game_1(){
 		}
    		context.fillStyle = "rgb(10,20,20)";
    		context.font = "18px serif";
-		context.fillText("´ò·Ö", game_x + 350, game_y + 560);
+		context.fillText("ï¿½ï¿½ï¿½", game_x + 350, game_y + 560);
 		//back main menu
 		if(isDownRect(game_x + 340, game_y + 540, 60, 30)){
 			enter();
@@ -70,7 +70,7 @@ function game_1(){
 		
 		this.logic = function()
 		{
-			if(isDownRect(game_x + x, game_y + y, w, 40)){  //µã»÷ºó
+			if(isDownRect(game_x + x, game_y + y, w, 40)){  //ï¿½ï¿½ï¿½ï¿½ï¿½
 				if(this.select == false){
 					var i = answers.indexOf(this) + 1;
 					for (var index = 0; index < 4; index++) {
@@ -100,11 +100,11 @@ function game_1(){
 	}
 	
 	
-	questions.push(new Question(100, 100, "1, Ğ¡»¨ÊÇÄĞÊÇÅ®£¿", new Array("ÄĞ", "Å®", "·ÇÄĞ·ÇÅ®", "²»ºÃËµ"), new Array(30,30,80,60)));
-	questions.push(new Question(100, 180, "2, Ë­Ã»×ö¹ıÈºÖ÷£¿", new Array("º£Ñó", "joy", "linda", "tiger"), new Array(40,40,55,55)));
-	questions.push(new Question(100, 260, "3, Äª×ÓºÍĞ¡ÄªÊÇÉ¶¹ØÏµ£¿", new Array("ĞÖµÜ", "ÊÒÓÑ", "Í¬Ñ§", "ÇòÓÑ"), new Array(40,40,40,40)));
-	questions.push(new Question(100, 340, "4, ÄÄ¸ö¼Ò»ï¿ÛÉ±×îÃÍ£¿", new Array("ºà", "johnny", "Ğ¡ÒË", "ÇàÊ¯°å"), new Array(30,70,40,55)));
-	questions.push(new Question(100, 420, "5, È¥ÄêÈºÄÚ±ÈÈüµÚÒ»ÃûÊÇ£¿", new Array("linda", "É½¼¦", "Ğ¡Ğ¡Å£", "°ÍÈûÂŞÄÇ"), new Array(55,40,55,80)));
+	questions.push(new Question(100, 100, "1, å°èŠ±æ˜¯ç”·æ˜¯å¥³ï¼Ÿ", new Array("ï¿½ï¿½", "Å®", "ï¿½ï¿½ï¿½Ğ·ï¿½Å®", "ï¿½ï¿½ï¿½ï¿½Ëµ"), new Array(30,30,80,60)));
+	questions.push(new Question(100, 180, "2, Ë­Ã»ï¿½ï¿½ï¿½ï¿½Èºï¿½ï¿½ï¿½ï¿½", new Array("ï¿½ï¿½ï¿½ï¿½", "joy", "linda", "tiger"), new Array(40,40,55,55)));
+	questions.push(new Question(100, 260, "3, Äªï¿½Óºï¿½Ğ¡Äªï¿½ï¿½É¶ï¿½ï¿½Ïµï¿½ï¿½", new Array("ï¿½Öµï¿½", "ï¿½ï¿½ï¿½ï¿½", "Í¬Ñ§", "ï¿½ï¿½ï¿½ï¿½"), new Array(40,40,40,40)));
+	questions.push(new Question(100, 340, "4, ï¿½Ä¸ï¿½ï¿½Ò»ï¿½ï¿½É±ï¿½ï¿½ï¿½Í£ï¿½", new Array("ï¿½ï¿½", "johnny", "Ğ¡ï¿½ï¿½", "ï¿½ï¿½Ê¯ï¿½ï¿½"), new Array(30,70,40,55)));
+	questions.push(new Question(100, 420, "5, È¥ï¿½ï¿½Èºï¿½Ú±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ç£ï¿½", new Array("linda", "É½ï¿½ï¿½", "Ğ¡Ğ¡Å£", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"), new Array(55,40,55,80)));
 
 
 	var flags = new Array();
@@ -137,7 +137,7 @@ function game_1(){
 		}
 		context.fillStyle = "rgb(210,20,80)";
    		context.font = "45px serif";
-		context.fillText(fenshu + "·Ö", game_x + 600, game_y + 560);
+		context.fillText(fenshu + "ï¿½ï¿½", game_x + 600, game_y + 560);
 	}
 	
 	

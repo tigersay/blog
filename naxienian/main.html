@@ -1,29 +1,29 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="canvas.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="jquery.js" charset="GBK"></script>
-<script type="text/javascript" src="tool.js" charset="GBK"></script>
-<script type="text/javascript" src="state_start.js" charset="GBK"></script>
-<script type="text/javascript" src="state_level.js" charset="GBK"></script>
-<script type="text/javascript" src="game_1.js" charset="GBK"></script>
-<script type="text/javascript" src="game_2.js" charset="GBK"></script>
-<script type="text/javascript" src="game_3.js" charset="GBK"></script>
-<script type="text/javascript" src="game_4.js" charset="GBK"></script>
-<script type="text/javascript" src="game_5.js" charset="GBK"></script>
-<script type="text/javascript" src="game_6.js" charset="GBK"></script>
-<script type="text/javascript" src="game_7.js" charset="GBK"></script>
-<script type="text/javascript" src="game_8.js" charset="GBK"></script>
-<script type="text/javascript" charset="GBK">
+<script type="text/javascript" src="jquery.js" charset="UTF-8"></script>
+<script type="text/javascript" src="tool.js" charset="UTF-8"></script>
+<script type="text/javascript" src="state_start.js" charset="UTF-8"></script>
+<script type="text/javascript" src="state_level.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_1.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_2.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_3.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_4.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_5.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_6.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_7.js" charset="UTF-8"></script>
+<script type="text/javascript" src="game_8.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
 
    	var canvas ;
    	var context ;
 
 	var canvasWidth , canvasHeight ;
-	var game_x, game_y, game_w = 800, game_h = 600;  //ÓÎÏ·ÇøÓò
+	var game_x, game_y, game_w = 800, game_h = 600;  //æ¸¸æˆåŒºåŸŸ
 
 
-	var game_state = 0;  //0Ö÷½çÃæ£¬1¹Ø¿¨½çÃæ£¬2ÓÎÏ·½çÃæ
+	var game_state = 0;  //0ä¸»ç•Œé¢ï¼Œ1å…³å¡ç•Œé¢ï¼Œ2æ¸¸æˆç•Œé¢
 	var state_start = new state_start();	
 	var state_level = new state_level();
 	var state_game ;
@@ -33,7 +33,7 @@
 		init();
 	});	
 
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	function init(){
 
 		canvas = $("#myCanvas");
@@ -45,13 +45,13 @@
 		$(window).mousemove(function(e){mousemove(e)});
 		$(window).mouseup(function(e){mouseup(e)});
 
-		//¿ªÆôÓÎÏ·
+		//å¼€å¯æ¸¸æˆ
 		run();
 	}
 
 
 	function resizeCanvas(){
-		//Ê¹canvasÌîÂúä¯ÀÀÆ÷´°¿Ú
+		//ä½¿canvaså¡«æ»¡æµè§ˆå™¨çª—å£
 		canvas.attr("width",$(window).get(0).innerWidth);
 		canvas.attr("height",$(window).get(0).innerHeight);
 		canvasWidth = canvas.width();
@@ -60,7 +60,7 @@
 		game_x = (canvasWidth - game_w) / 2;
 		game_y = (canvasHeight - game_h) / 2;
 
-		paint(); //ÕâÀïÂíÉÏÖØÐÂ»æÖÆÒ»ÏÂ£¬²»È»½çÃæ»áÓÐÉÁË¸
+		paint(); //è¿™é‡Œé©¬ä¸Šé‡æ–°ç»˜åˆ¶ä¸€ä¸‹ï¼Œä¸ç„¶ç•Œé¢ä¼šæœ‰é—ªçƒ
 	}
 	
 	
@@ -81,10 +81,10 @@
 	}
 
 	function paint(){
-		//»­±³¾°
+		//ç”»èƒŒæ™¯
 		context.fillStyle = "rgb(60,60,125)";
 		context.fillRect(0,0,canvasWidth,canvasHeight);
-		//»­ÓÎÏ·ÇøÓò
+		//ç”»æ¸¸æˆåŒºåŸŸ
 		context.fillStyle = "rgb(210,250,250)"
    		context.fillRect(game_x, game_y,game_w,game_h);
 
@@ -128,10 +128,10 @@
 	}
 
 	
-	/*-------Êó±êÊÂ¼þ´¦Àí-----*/
+	/*-------é¼ æ ‡äº‹ä»¶å¤„ç†-----*/
 	var dx,dy,mx,my,ux,uy;
-	var lmx, lmy; //ÉÏÒ»ÏÂÊó±êmoveÎ»ÖÃ
-	var isRight = false; //ÊÇ·ñÓÒ¼üµã»÷µÄ
+	var lmx, lmy; //ä¸Šä¸€ä¸‹é¼ æ ‡moveä½ç½®
+	var isRight = false; //æ˜¯å¦å³é”®ç‚¹å‡»çš„
 
 	function mousedown(e){
 		dx = e.pageX;
@@ -146,7 +146,7 @@
 		ux = e.pageX;
 		uy = e.pageY;
 	}
-	//ÅÐ¶ÏÊÂ¼þÊÇ·ñ·¢ÉúÔÚÄ³¸öÇøÓòÄÚ
+	//åˆ¤æ–­äº‹ä»¶æ˜¯å¦å‘ç”Ÿåœ¨æŸä¸ªåŒºåŸŸå†…
 	function isDownRect(x,y,w,h){
 		if(dx >= x && dx <= x + w && dy >= y && dy <= y + h){return true;}
 	}
@@ -157,7 +157,7 @@
 		if(ux >= x && ux <= x + w && uy >= y && uy <= y + h){return true;}
 	}
 	
-	//×¢Òâ£º£º£ºÒ»¶¨ÒªÔÚµ÷ÓÃÁËÅÐ¶ÏÊÇ·ñµã»÷µ½Ä³´¦µÄ·½·¨ÒÔºó£¬£¬µ÷ÓÃÏÂÃæÕâÁ½¸ö·½·¨£¬£¬´¦ÀíÖ®£¬£¬·ñÔò¿ÉÄÜ³öÏÖÒì³£¡£
+	//æ³¨æ„ï¼šï¼šï¼šä¸€å®šè¦åœ¨è°ƒç”¨äº†åˆ¤æ–­æ˜¯å¦ç‚¹å‡»åˆ°æŸå¤„çš„æ–¹æ³•ä»¥åŽï¼Œï¼Œè°ƒç”¨ä¸‹é¢è¿™ä¸¤ä¸ªæ–¹æ³•ï¼Œï¼Œå¤„ç†ä¹‹ï¼Œï¼Œå¦åˆ™å¯èƒ½å‡ºçŽ°å¼‚å¸¸ã€‚
 	function resetDownPointer(){
 		dx = -1; dy = -1;
 	}
@@ -169,7 +169,7 @@
 		return isDownRect(game_x, game_y, game_w, game_h);
 	}
 	
-	//----´ÓÓÎÏ·ÖÐ·µ»Øµ½¹Ø¿¨½çÃæ
+	//----ä»Žæ¸¸æˆä¸­è¿”å›žåˆ°å…³å¡ç•Œé¢
 	function paintBackLevel(){
 		//back button
 		if(isMoveRect(game_x + 40, game_y + 30, 60, 30)){
@@ -185,7 +185,7 @@
 			resetDownPointer();
 		}
 	}
-	//»­ÓÎÏ·±êÌâ
+	//ç”»æ¸¸æˆæ ‡é¢˜
 	function paintTitle(title){
 		context.fillStyle = "rgb(0,0,0)";
    		context.font = "20px serif";
@@ -194,7 +194,7 @@
 	
 </script>
 
-<title>ÄÇÐ©ÄêµÄÓðÃ«Çò</title>
+<title>é‚£äº›å¹´çš„ç¾½æ¯›çƒ</title>
 </head>
 
 <body ondragstart="window.event.returnValue=false" 
