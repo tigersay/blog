@@ -8,75 +8,18 @@
 	
 	body{
 		/**background:#99cbbb; -**/
-		background: #e4ebe9 url(../img/pattern.png) repeat top left;
-	}
-	
-	#container {
-		width: 100%;
+		background: #e4ebe9  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/45816/IMG_00000159_hdr.jpg');
 	}
 	
 	
-	#gamelist {
-		width: 976px;
-		height: 100%;
-		/*background-color: #abcdef; */
-		margin: 10px auto;
-		border-radius: 2px;
-		overflow: hidden;
+	#infomation{
+		width: 800px;
+		margin: 100px auto;
+		opacity:0.9;
+		background: #abcdef;
+		border-radius: 8px;
+		padding: 30px 30px;
 	}
-	
-	.game {
-		background-color: #fff;  /*#EEEEEE*/
-		width: 300px;
-		height: 400px;
-		float: left;
-		margin: 30px 12px 20px;
-		padding-top: 0px;
-		border-radius: 1px;
-		cursor:pointer;  /*鼠标经过时显示手型*/
-	}
-	
-	.gameimg {
-		text-align: center;
-		margin: 25px 5px;
-	}
-	
-	.gamename {
-		text-align: center;
-		margin: 5px 5px;
-		font-size: 25px;
-		margin-bottom: 20px;
-		text-shadow: 0px 1px 1px #e4ebe9;
-	}
-	
-	.gamelabel{
-		margin-top: 30px;
-		margin-left: 30px;
-		margin-right: 30px;
-		margin-bottom: 10px;
-		font-size: 15px;
-	}
-	
-	
-	.gameinfo{
-		margin-top: 5px;
-		margin-left: 30px;
-		margin-right: 30px;
-		margin-bottom: 10px;
-		/*border: 10px solid #b0ccc6;*/
-		font-size: 15px;
-		
-	}
-	
-	
-	#footer {
-		background-color: #99bbbb;
-		clear: both;
-		text-align: center;
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-
 	
 	
 	
