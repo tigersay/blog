@@ -1,0 +1,23 @@
+	/*常用的清除CSS默认样式代码*/
+	body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, pre, fieldset, 
+	lengend, button, input, textarea, th, td
+	{ 
+		margin: 0;
+		padding: 0;
+	}
+	
+	body{
+		/**background:#99cbbb; -**/
+		background: #e4ebe9 url(../img/4.png) repeat top left;
+	}
+	
+	
+	#infomation{
+		width: 800px;
+		margin: 100px auto;
+		opacity:0.9;
+		background: #abcdef;
+		border-radius: 8px;
+		padding: 20px 20px;
+	}
+	
