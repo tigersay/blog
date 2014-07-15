@@ -9,7 +9,7 @@
 	body{
 		/**background:#99cbbb; **/
 	/**	background: #e4ebe9  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/45816/IMG_00000159_hdr.jpg');**/
-		background: #e4ebe9  url('../img/3.jpg') repeat top left;
+		background: #e4ebe9  url('../img/3.png') repeat top left;
 		background-size: cover;
   		background-attachment: fixed; 
   	
