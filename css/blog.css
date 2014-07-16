@@ -13,25 +13,23 @@
 	
 	#list{
 		width: 800px;
-		margin: 50px auto;
+		margin: 30px auto;
 		opacity:0.9;
-		background: #abcdef;
+		background: #abcdcd;
 		border-radius: 8px;
-		padding: 20px 20px;
+		padding: 10px 10px;
 	}
 	
 	
 	#list li {
 		list-style:square;
-		margin: 6px 10px; 
+		margin: 8px 25px; 
 	}
 	#list a {
 		text-decoration: none;
-		display: block;/*a标签转块级元素*/
-		padding: 6px 0px;
+		padding: 4px 0px;
 	}
 	#list a:hover {
-		 color: #222222;
 		 border-bottom:solid 1px #000000;
 	}
 	

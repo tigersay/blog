@@ -12,11 +12,11 @@
 	}
 	
 	#infomation{
-		width: 300px;
-		margin: 100px 200px;
-		opacity:0.9;
-		background: #abcdef;
+		width: 500px;
+		margin: 100px auto;
+		opacity:0.8;
+		background: #abcdcd;
 		border-radius: 8px;
-		padding: 30px 30px;
+		padding: 50px 50px;
 	}
 	

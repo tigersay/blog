@@ -1,0 +1,43 @@
+
+	* {
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;
+		font-smoothing:antialiased;
+		text-rendering:optimizeLegibility;
+	}
+	
+	::selection {background:#abcdef;color:#341212;}  /**文本被选中后的背景颜色和前景颜色*/
+	
+	body {
+		/**background:#99cbbb;*/
+		background: #e4ebe9 /* url(../img/article2.png) repeat top left */;
+	}
+	
+	
+	
+	
+	.title {
+		text-align: center;
+		line-height: 20px;
+		margin:20px auto;
+	}
+	.content {
+		width:800px;
+		margin:20px auto;
+		/* border: 1px solid; */
+		overflow: auto;	 
+		clear: both;
+		color:black;
+		letter-spacing:1.0px;
+		line-height: 20px; 
+		
+	}
+	
+	
+	
