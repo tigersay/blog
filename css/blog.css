@@ -21,16 +21,14 @@
 	}
 	
 	
-	
 	#list li {
 		list-style:square;
-		margin: 6px 5px; 
-		padding: 6px 20px;;
+		margin: 6px 10px; 
 	}
 	#list a {
-		text-decoration: none
+		text-decoration: none;
 		display: block;/*a标签转块级元素*/
-		padding: 6px 0px;;
+		padding: 6px 0px;
 	}
 	#list a:hover {
 		 color: #222222;
