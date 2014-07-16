@@ -16,7 +16,7 @@
 	
 	body {
 		/**background:#99cbbb;*/
-		background: #e4ebe9 /* url(../img/article2.png) repeat top left */;
+		background: #e4ebe9  url(../img/article.png) repeat top left ;
 	}
 	
 	
@@ -26,6 +26,11 @@
 		text-align: center;
 		line-height: 20px;
 		margin:20px auto;
+		background: #bbedcd;
+		border-radius: 8px;
+		padding: 15px 15px 10px 10px;
+		opacity:0.9;
+		width:800px;
 	}
 	.content {
 		width:800px;
@@ -36,7 +41,10 @@
 		color:black;
 		letter-spacing:1.0px;
 		line-height: 20px; 
-		
+		background: #abcdcd;
+		border-radius: 8px;
+		padding: 15px 15px;
+		opacity:0.9;
 	}
 	
 	
