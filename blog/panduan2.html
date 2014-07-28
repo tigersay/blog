@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>判断数abcdef能否被11、12整除</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		判断数abcdef能否被11、12整除
+	</div>
+	<div class="content">
+	
+	当被11除的时候：<br><br>
+
+	1的余数是1. 10和-1同余。100和1同余。<br>
+
+	一般地：如果10^n和1同余，那么10^（n+1）和10同余，于是也和-1同余。<br>
+	
+	如果10^n和-1同余，那么10^（n+1）和-10同余，于是也就和1同余。<br>
+	
+	所以，对于10^n,n为偶数时和1同余，n为奇数时和-1同余。<br>
+	
+	abcdef=a*10^5+b*10^4+c*10^3+d*10^2+e*10+f*10^0.<br>
+	
+	所以abcdef和-a+b-c+d-e+f同余。<br>
+	
+	所以只须要判断-a+b-c+d-e+f能否被11整除即可。<br><br>
+	
+	 
+	
+	由此引申出判断某数能否被11整除的方法：<br>
+	
+	看该数字的奇数位数字之和与偶数位数字之和的差能否被11整除！<br>
+	
+	-------------------------------------------------------------------<br><br>
+	
+	当被12除的时候：<br><br>
+	
+	1的余数是1. 10的余数是10。<br>
+	
+	100和4同余。1000=10*100，所以1000和40同余，所以和4同余。<br>
+	
+	如此推导，可以知道：10^n（n大于1）都是和4同余。<br>
+	
+	abcdef=a*10^5+b*10^4+c*10^3+d*10^2+e*10+f*10^0.<br>
+	
+	所以abcdef和4*(a+b+c+d)+e*10+f同余。<br>
+	
+	也就是：abcdef和4*(a+b+c+d)+ef同余。<br>
+	
+	所以只须要判断4*(a+b+c+d)+ef能否被12整除即可。<br><br>
+	
+	 
+	
+	由此引申出判断某数能否被12整除的方法：<br>
+	
+	看该数字的前n-2位数之和乘以4再加上后两位组成的两位数的和能否被12整除！<br>
+	
+	注：方法二：判断该数是否同时被4和3整除。<br><br>
+	</div>
+	
+</body>
+</html>
