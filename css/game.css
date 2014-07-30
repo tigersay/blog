@@ -22,7 +22,7 @@
 	.list{
 		clear: left;
 		width:1000px;
-		margin:30px auto;
+		margin:20px auto;
 		background: #abcdcd;
 	}
 	
@@ -30,9 +30,11 @@
 		text-align: center;
 		line-height: 20px;
 		margin:5px 5px;
-		background: #abdeab;
-		padding: 5px 5px;
-		opacity:0.9;
+		background: #E5E5E5;
+		/* border: 1px solid; */
+		color:black;
+		padding: 5px 15px;
+		opacity:1.0;
 		border-radius: 10px 15px;
 		float:left;
 	}
@@ -62,6 +64,5 @@
 		float:left;
 		display: inline-block;
 	}
-	
 	
 	
