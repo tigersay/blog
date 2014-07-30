@@ -13,13 +13,32 @@
 	}
 	
 	
-	#infomation{
+	#aboutme{
 		width: 800px;
-		margin: 50px auto;
+		margin: 30px auto;
 		opacity:0.9;
 		background: #abcdef;
 		border-radius: 8px;
 		padding: 30px 30px;
+	}
+	
+	#content{
+		width: 800px;
+		margin: 30px auto;
+		opacity:0.9;
+		background: #abcdef;
+		border-radius: 8px;
+		padding: 30px 30px;
+	}
+	
+	.infomation{
+		width: 200px;
+		margin: 50px 50px;
+		opacity:0.9;
+		background: #abcdef;
+		border-radius: 8px;
+		padding: 30px 30px;
+		
 	}
 	
 	
