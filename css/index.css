@@ -15,32 +15,36 @@
 	
 	#aboutme{
 		width: 800px;
-		margin: 30px auto;
+		margin: 10px auto;
 		opacity:0.9;
-		background: #abcdef;
+		/* background: #abcdef; */
 		border-radius: 8px;
-		padding: 30px 30px;
+		padding: 10px 10px;
 	}
 	
 	#content{
 		width: 800px;
-		margin: 30px auto;
+		margin: 20px auto;
 		opacity:0.9;
-		background: #abcdef;
+		/* background: #abcdef; */
 		border-radius: 8px;
 		padding: 30px 30px;
 	}
 	
-	.infomation{
-		width: 200px;
-		margin: 50px 50px;
-		opacity:0.9;
-		background: #abcdef;
-		border-radius: 8px;
-		padding: 30px 30px;
-		
+	#alist {
+		margin: 6px 0px;
 	}
 	
+	#content a {
+		text-decoration: none;
+		color: #000;
+		margin: 4px 0px;
+	}
+	#content a:hover {
+		/* color: #aa3322; */
+		 border-bottom:solid 1px #000000;
+		 margin: 4px 0px;
+	}
 	
 	
 	

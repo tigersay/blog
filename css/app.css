@@ -27,6 +27,7 @@
 	#list a {
 		text-decoration: none;
 		padding: 4px 0px;
+		color: #000;
 	}
 	#list a:hover {
 		 border-bottom:solid 1px #000000;
