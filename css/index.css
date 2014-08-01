@@ -8,14 +8,14 @@
 	
 	body{
 		/**background:#99cbbb; **/
-		background: #e4ebe9  url('../img/app_bg.png') repeat top left;
+		background: #e4ebe9  url('../img/7.png') repeat top left;
   	
 	}
 	
 	
 	#aboutme{
 		width: 800px;
-		margin: 30px auto;
+		margin: 30px auto 20px;
 		opacity:0.9;
 		/* background: #abcdef; */
 		border-radius: 8px;
@@ -28,7 +28,8 @@
 		opacity:0.9;
 		/* background: #abcdef; */
 		border-radius: 8px;
-		padding: 30px 30px;
+		padding: 15px 15px;
+		/* border: solid 1px #000000; */
 	}
 	
 	#alist {
@@ -46,6 +47,9 @@
 		 margin: 4px 0px;
 	}
 	
-	
+	#content td{
+		width:200px;
+		height:20px;
+	}
 	
 	
