@@ -1,6 +1,6 @@
 	/*常用的清除CSS默认样式代码*/
 	body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, pre, fieldset, 
-	lengend, button, input, textarea, th, td
+	lengend, button, input, textarea, th, td span a
 	{ 
 		margin: 0;
 		padding: 0;
@@ -15,9 +15,29 @@
 		width: 800px;
 		margin: 20px auto;
 		opacity:0.9;
-		background: #abcdcd;
+		background: #aab9b9;
 		border-radius: 4px;
 		padding: 12px 12px;
 		color: black;
 	}
 	
+	
+	
+	#monthlist{
+		width: 800px;
+		margin: 20px auto;
+		padding: 12px 12px;
+	}
+	
+	.month {
+		background: #abcdab; 
+		width:80px;
+		margin: 0 6px;
+		padding: 10px 10px;
+		border-radius: 4px;
+	}
+	
+	.month a{
+		color:#000;
+		text-decoration: none;
+	}
