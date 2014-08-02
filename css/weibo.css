@@ -7,15 +7,14 @@
 	}
 	
 	body{
-		background: #e4ebe9 url(../img/app_bg.png) repeat top left;
+		background: #e4ebe9 url(../img/7.png) repeat top left;
 	}
 	
 	
 	.weibo{
 		width: 800px;
 		margin: 20px auto;
-		opacity:0.9;
-		background: #aab9b9;
+		/* background: #ffffff; */
 		border-radius: 4px;
 		padding: 12px 12px;
 		color: black;

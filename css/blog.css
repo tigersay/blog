@@ -8,14 +8,13 @@
 	
 	body{
 		/**background:#99cbbb; -**/
-		background: #e4ebe9 url(../img/app_bg.png) repeat top left;
+		background: #e4ebe9 url(../img/7.png) repeat top left;
 	}
 	
 	#list{
 		width: 800px;
-		margin: 30px auto;
-		opacity:0.9;
-		background: #aab9b9;
+		margin: 0px auto;
+		/* background: #aab9b9; */
 		border-radius: 8px;
 		padding: 10px 10px;
 	}
@@ -37,7 +36,14 @@
 	
 	
 	
-	
+	.category{
+		width: 80px;
+		margin: auto 10px;
+		/* background: #aab9b9;
+		border-radius: 8px; */
+		padding: 6px;
+		color:#1234ff;
+	}
 	
 	
 	
