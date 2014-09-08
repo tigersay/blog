@@ -12,18 +12,20 @@
 	
 	
 	.weibo{
-		width: 800px;
-		margin: 10px auto;
+		width: 850px;
+		margin: 20px auto;
 		/* background: #ffffff; */ 
 		border-radius: 4px;
 		padding: 12px 12px;
 		color: black;
+		
+		font-size: 25px;
 	}
 	
 	
 	
 	#monthlist{
-		width: 800px;
+		width: 850px;
 		margin: 20px auto;
 		padding: 12px 12px;
 	}
