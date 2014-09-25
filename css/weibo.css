@@ -40,3 +40,19 @@
 		color:#000;
 		text-decoration: none;
 	}
+	
+	
+	
+	.weibo img{
+		margin: 5px 5px; 
+		transition: 1s; 
+		width:25px;
+		height:25px; 
+	}
+	
+	.weibo img:hover{
+		width:700px;
+		height:400px; 
+	}
+	
+	
