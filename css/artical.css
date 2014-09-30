@@ -15,7 +15,7 @@
 	::selection {background:#abcdef;color:#341212;}  /**文本被选中后的背景颜色和前景颜色*/
 	
 	body {
-		/**background:#99cbbb;*/
+		background:#e4ebe9;
 		/* background: #e4ebe9  url(../img/article.png) repeat top left ; */
 	}
 	
@@ -42,7 +42,7 @@
 		color:black;
 		letter-spacing:1.0px;
 		line-height: 22px; 
-		/* background: #ededed; */
+		/* background: #ededed;  */
 		border-radius: 8px;
 		padding: 15px 15px;
 		opacity:1.0;

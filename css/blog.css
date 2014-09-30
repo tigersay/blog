@@ -35,11 +35,11 @@
 	}
 	
 	.category{
-		width: 80px;
+		/* width: 80px; */
 		margin: auto 10px;
 		/* background: #aab9b9;
 		border-radius: 8px; */
-		padding: 6px;
+		/* padding: 6px; */
 		color:#1234ff;
 	}
 	
