@@ -5,37 +5,20 @@
 <title>tiger的微博</title>
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/weibo.css">
+<script type="text/javascript" src="js/daohang.js" charset="gbk"></script>
 </head>
 <body>
 
 	
 	<div id="header">
-		<div id="daohang">  <!-- 导航 -->
-			<ul>
-			 <li><a href="index.html">首页</a></li>
-			  <li><a href="blog.html">博客</a></li>
-			  <li><a href="app.html">应用</a></li>
-			  <li><a href="weibo_9.html">微博</a></li>
-			 <!--  <li><a href="about.html">关于</a></li> -->
-		<!--   <li><a href=""  onclick="javascript: window.open('suggestion.html');">反馈 </a></li>  -->	
-			</ul>
-		</div>
+		<script type="text/javascript">createMenu()</script>
 	</div>
 	
 	
 	<div id="monthlist">
-		<span class="month"  style="background: #ababcd;">
-			<a href="#">2014年7月</a>
-		</span>
-		<span class="month">
-			<a href="weibo_8.html">2014年8月</a>
-		</span>
-		<span class="month">
-			<a href="weibo_9.html">2014年9月</a>
-		</span>
-		<span class="month">
-			<a href="weibo_10.html">2014年10月</a>
-		</span>
+		<script type="text/javascript">
+			createWeiboMonthMenu("seven");
+		</script>
 	</div>
 	
 	

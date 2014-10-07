@@ -55,4 +55,26 @@
 		height:400px; 
 	}
 	
+	.menuimg{
+		margin: 5px 5px; 
+		transition: 1s 1s width, 1s height; 
+		width:25px;
+		height:25px; 
+	}
+	
+	.menuimg:hover{
+		width:465px;
+		height:113px; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
