@@ -1,27 +1,27 @@
 /**
- * Éú³Éµ¼º½Ä¿Â¼
+ * ç”Ÿæˆå¯¼èˆªç›®å½•
  */
 function createMenu(){
 	var menu_bar = document.getElementById("header");
 	menu_bar.innerHTML = "<div id=\"daohang\"> " +
 			"<ul>" +
-			"<li><a href=\"index.html\">Ê×Ò³</a></li>" +
-			"<li><a href=\"blog.html\">²©¿Í</a></li>" +
-			"<li><a href=\"app.html\">Ó¦ÓÃ</a></li>" +
-			"<li><a href=\"weibo_10.html\">Î¢²©</a></li>" +
+			"<li><a href=\"index.html\">é¦–é¡µ</a></li>" +
+			"<li><a href=\"blog.html\">åšå®¢</a></li>" +
+			"<li><a href=\"app.html\">åº”ç”¨</a></li>" +
+			"<li><a href=\"weibo_10.html\">å¾®åš</a></li>" +
 			"</ul></div>";
 }
 
 /**
- * Éú³ÉÎ¢²©Ò³ÃæÖĞµÄÔÂ·İÄ¿Â¼
- * @currMonth : 
+ * ç”Ÿæˆå¾®åšé¡µé¢ä¸­çš„æœˆä»½ç›®å½•
+ * @currMonth : å½“å‰æœˆä»½ã€‚
  */
 function createWeiboMonthMenu(currMonth){
 	var menu_bar = document.getElementById("monthlist");
-	menu_bar.innerHTML = "<span id=\"seven\" class=\"month\"><a href=\"weibo_7.html\">2014Äê7ÔÂ</a></span>" +
-			"<span id=\"eight\" class=\"month\"><a href=\"weibo_8.html\">2014Äê8ÔÂ</a></span>" +
-			"<span id=\"nine\" class=\"month\"><a href=\"weibo_9.html\">2014Äê9ÔÂ</a></span>" +
-			"<span id=\"ten\" class=\"month\"><a href=\"weibo_10.html\">2014Äê10ÔÂ</a></span>" ;
+	menu_bar.innerHTML = "<span id=\"seven\" class=\"month\"><a href=\"weibo_7.html\">2014å¹´7æœˆ</a></span>" +
+			"<span id=\"eight\" class=\"month\"><a href=\"weibo_8.html\">2014å¹´8æœˆ</a></span>" +
+			"<span id=\"nine\" class=\"month\"><a href=\"weibo_9.html\">2014å¹´9æœˆ</a></span>" +
+			"<span id=\"ten\" class=\"month\"><a href=\"weibo_10.html\">2014å¹´10æœˆ</a></span>" ;
 	
 	var curr = document.getElementById(currMonth);
 	curr.style.background = "#ababcd";
