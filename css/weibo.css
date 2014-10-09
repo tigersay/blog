@@ -68,7 +68,17 @@
 	}
 	
 	
+	.phone{
+		margin: 1px 25px; 
+		transition: 1s; 
+		width:25px;
+		height:25px; 
+	}
 	
+	.phone:hover{
+		width:240px;
+		height:400px; 
+	}
 	
 	
 	
