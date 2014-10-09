@@ -71,8 +71,8 @@
 	.phone{
 		margin: 1px 25px; 
 		transition: 1s; 
-		width:25px;
-		height:25px; 
+		width:36px;
+		height:60px; 
 	}
 	
 	.phone:hover{
