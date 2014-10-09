@@ -6,26 +6,19 @@
 	
 	#header {
 		background-color: #cfcfef;
-		height: 50px;
-		margin: auto auto;
+		width:900px;
+		height: 40px;
+		margin: 5px auto;
 		opacity:0.8;
+		border-color: black;
+		border-radius: 6px;
 	}
 	
-	/* #title{
-		width: 80px;
-		height: 60px;
-		float: left;
-		line-height: 60px;
-		text-align: center;
-	} */
 	
 	#daohang{
-		margin: 2px;
-		padding: 0px;
 		float:left;
 		position: relative;
-		bottom: 0px;
-		left: 200px; 
+		left: 30px; 
 	}
 	
 	#daohang li {
