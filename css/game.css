@@ -14,8 +14,8 @@
 	::selection {background:#abcdef;color:#341212;}  /**文本被选中后的背景颜色和前景颜色*/
 	
 	body {
-		/* background:#99bbcb; */
-		 background: #e4ebe9  url(../img/7.png) repeat top left ; 
+		background:#e4ebe9; 
+		/* background: #e4ebe9  url(../img/7.png) repeat top left ;  */
 	}
 	
 	
