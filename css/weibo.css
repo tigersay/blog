@@ -82,6 +82,17 @@
 	}
 	
 	
+	.jiayuanimg{
+		margin: 5px 5px; 
+		transition: 1s width, 1s height; 
+		width:25px;
+		height:25px; 
+	}
+	
+	.jiayuanimg:hover{
+		width:816px;
+		height:617px; 
+	}
 	
 	
 	
