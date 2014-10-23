@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>tiger抽奖</title>
+		 <style type="text/css">
+	        td{width:50px;height:50px;border:3px solid #ccc;text-align:center;vertical-align:middle}
+	    
+	    	#container{
+	    		width:320px;
+	    		margin: 50px auto;
+	    	}
+	    </style>
+	</head>
+	<body>
+		
+	
+	<div id="container">
+	<table id="tb">
+		<tr>
+			<td id="btn1">1</td>
+			<td id="btn2">2</td>
+			<td id="btn3">3</td>
+			<td id="btn4">4</td>
+			<td id="btn5">5</td>
+		</tr>
+		<tr>
+			<td id="btn16">16</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td id="btn6">6</td>
+		</tr>
+		<tr>
+			<td id="btn15">15</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td id="btn7">7</td>
+		</tr>
+		<tr>
+			<td id="btn14">14</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td id="btn8">8</td>
+		</tr>
+		<tr>
+			<td id="btn13">13</td>
+			<td id="btn12">12</td>
+			<td id="btn11">11</td>
+			<td id="btn10">10</td>
+			<td id="btn9">9</td>
+		</tr>
+	</table>
+	
+	<br>
+	<p>请输入1-16其中一位整数，代表要停止的位置</p>
+
+
+	<input id="txtnum" value="12" type="text"/>
+	<input type="button" value="开始" onclick="StartGame()" />
+</div>			
+	
+	<script>
+		
+		function trim(str){
+			 return str.replace(/(^\s*)|(\s*$)/g, ""); 
+		}
+		
+		var tips = document.getElementById("tip");
+		
+		var startIndex = 1;
+		var stepIndex = 0;  //计步器，走到了第几步
+		
+		var start_step_num = 5; //走几步后加速
+		var end_step_num = 5; //减速的步数
+		var all_step_num = 0; //一共要走多少步，也就是，线程要循环多少次
+		
+		Time;
+		
+		
+		function StartGame(){
+			
+			var target = document.getElementById("txtnum").value;
+         	target = trim(target);
+         	target = parseInt(target);  //非常关键，要把字符串转为数字！
+         	
+         	stepIndex = 0; //初始化步数为0
+         	end_step_num = Math.floor(Math.random()*16); //随机的减速步数
+         	var temp = start_step_num + 16 + Math.floor(Math.random()*24);//启动和加速走的步数
+         	var tempIndex = (startIndex + temp) % 16; //走了temp步后，到达的索引
+         	var tempIndex2 = (target - end_step_num + 16) % 16; //到达减速位置时的索引
+         	var temp2 = (tempIndex2 - tempIndex + 16) % 16;  //从tempIndex到tempIndex2需要走多少步
+         	all_step_num =  temp + temp2 + end_step_num;  //一共要走多少步
+         	
+         	
+         	Time = setInterval(run, 300); //设置循环，隔300循环一次
+         	
+         	var curr = document.getElementById("btn" + startIndex);
+         	curr.style.border="3px solid red";  
+        }
+		
+		
+		
+		function run(){
+			
+			var curr = document.getElementById("btn" + startIndex);
+         	curr.style.border="3px solid #ccc";
+			
+			stepIndex ++;
+			if(stepIndex == start_step_num){  //开始加速
+				 clearInterval(Time);
+				 Time = setInterval(run, 50); //隔50循环一次
+			}
+			
+			if(stepIndex == all_step_num - end_step_num){  //开始减速
+				 clearInterval(Time);
+				 Time = setInterval(run, 300); //隔30循环一次
+			}
+			
+			startIndex = (startIndex + 1) % 16;
+			if(startIndex == 0)startIndex = 16;
+			curr = document.getElementById("btn" + startIndex);
+         	curr.style.border="3px solid red";
+         	
+         	if(stepIndex == all_step_num){
+         		 clearInterval(Time);
+         	}
+		}
+		
+		
+	</script>	
+		
+		
+	</body>
+</html>
