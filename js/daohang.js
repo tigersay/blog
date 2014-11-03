@@ -8,7 +8,7 @@ function createMenu(){
 			"<li><a href=\"index.html\">首页</a></li>" +
 			"<li><a href=\"blog.html\">博客</a></li>" +
 			"<li><a href=\"app.html\">应用</a></li>" +
-			"<li><a href=\"weibo_10.html\">微博</a></li>" +
+			"<li><a href=\"weibo_11.html\">微博</a></li>" +
 			"</ul></div>";
 }
 
@@ -21,7 +21,8 @@ function createWeiboMonthMenu(currMonth){
 	menu_bar.innerHTML = "<span id=\"seven\" class=\"month\"><a href=\"weibo_7.html\">2014年7月</a></span>" +
 			"<span id=\"eight\" class=\"month\"><a href=\"weibo_8.html\">2014年8月</a></span>" +
 			"<span id=\"nine\" class=\"month\"><a href=\"weibo_9.html\">2014年9月</a></span>" +
-			"<span id=\"ten\" class=\"month\"><a href=\"weibo_10.html\">2014年10月</a></span>" ;
+			"<span id=\"ten\" class=\"month\"><a href=\"weibo_10.html\">2014年10月</a></span>" +
+			"<span id=\"eleven\" class=\"month\"><a href=\"weibo_11.html\">2014年11月</a></span>" ;
 	
 	var curr = document.getElementById(currMonth);
 	curr.style.background = "#ababcd";
