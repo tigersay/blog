@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>晋善晋美</title>
+<style>
+
+	body{
+		background:#e4ebe9; 
+	}
+	
+	.play{
+		width:600px;
+		margin: auto;
+		margin-bottom: 50px;
+	}
+	
+	.title{
+		line-height: 30px;
+		font-size: 24px;
+		font-weight: normal;
+		font-family: 'microsoft yaHei', '微软雅黑', arial;
+		color: #333;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+</style>
+</head>
+<body>
+
+
+	<div class="play">
+		<div class="title">晋善晋美宣传片</div>
+		<div id="jinshanjinmei" style="width:600px;height:500px;"></div>
+	</div>
+	
+	
+	<div class="play">
+		<div class="title">飞越山西 晋善晋美 第一集 山河</div>
+		<div id="youkuplayer" style="width:600px;height:500px;"></div>
+	</div>
+
+	
+	<script type="text/javascript" src="http://player.youku.com/jsapi">
+			function showVideo(domid,vid){
+			   player = new YKU.Player(domid,{
+			       client_id: 'd0804b7294e1597a',
+			       vid: vid,
+			       show_related: true
+			       });
+		   	}
+		   	showVideo('jinshanjinmei','XNjgzNjcwMTYw');
+		   	showVideo('youkuplayer','XODE1MTc5ODA0');
+		</script>
+
+
+
+</body>
+</html>

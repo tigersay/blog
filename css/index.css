@@ -21,21 +21,16 @@
 		padding: 10px 10px;
 	}
 	
-	#movie{
-		width: 90px; 
+	.label{
+		width: 100px;  
 		margin: 30px 280px;
-		background: #abcdef; 
 		border-radius: 8px;
 		padding: 4px 4px;
 	}
 	
-	#shuqian{
-		width: 90px; 
-		margin: 30px 280px;
-		background: #cdabef; 
-		border-radius: 8px;
-		padding: 4px 4px;
+	.label a{
+		text-align: center;
+		text-decoration: none;
+		display: block;
 	}
-	
-	
 	
