@@ -83,7 +83,28 @@
 		天气转冷，开始穿长袖衬衫了。okyule域名终于备案成功了。(11-3)
 	</div>
 	<div class="weibo">
-		今天，恒大四连冠了。同时，里皮卸任了。(11-2)
+		今天，恒大四连冠了。同时，里皮卸任了。(11-2)<br>
+		<input type="button" id="hdbtn" class="videoBtn" onclick="showVideo()" value="look"></input> 
+		<script type="text/javascript">
+			function showVideo(){
+				var a = document.getElementById("hdmv");
+				var playbtn = document.getElementById("hdbtn");
+				if(a.style.display ==""){
+					a.style.display = "none";
+					playbtn.value = "look";
+				}else{
+					a.style.display = "";
+					playbtn.value = "close";
+				}
+			}
+		</script>
+		<div id="hdmv" style="display: none;margin-top: 12px">
+		<object id="ssss" width="480" height="370" >
+		<param name="allowScriptAccess" value="always" />
+		<embed pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://you.video.sina.com.cn/api/sinawebApi/outplayrefer.php/vid=136173438_6_6_1_OBmxHHFqCzHK+l1lHz2stqkM7KQNt6njnynt71+iIQxZVgyLYorfO4kK4SrQAchB9W9F/s.swf" type="application/x-shockwave-flash" name="ssss" allowFullScreen="true" allowScriptAccess="always" width="480" height="370">
+		</embed></object>
+		</div>
+		
 	</div>
 	<div class="weibo">
 		在公司待了一天。晚上去时尚天河吃了个年糕炒拉面。 (11-2)
