@@ -5,10 +5,10 @@ function createMenu(){
 	var menu_bar = document.getElementById("header");
 	menu_bar.innerHTML = "<div id=\"daohang\"> " +
 			"<ul>" +
-			"<li><a href=\"index.html\">首页</a></li>" +
-			"<li><a href=\"blog.html\">博客</a></li>" +
-			"<li><a href=\"app.html\">应用</a></li>" +
-			"<li><a href=\"weibo_11.html\">微博</a></li>" +
+			"<li><a href=\"index.html\">Home</a></li>" +
+			"<li><a href=\"blog.html\">Blog</a></li>" +
+			"<li><a href=\"app.html\">App</a></li>" +
+			"<li><a href=\"weibo_11.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
