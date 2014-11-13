@@ -11,7 +11,6 @@
 	}
 	
 	#list{
-		width: 800px;
 		margin: 0px auto;
 		/* background: #aab9b9; */
 		border-radius: 8px;
@@ -29,16 +28,11 @@
 		color: #000;
 	}
 	#list a:hover {
-		/* color: #aa3322; */
 		 border-bottom:solid 1px #000000;
 	}
 	
 	.category{
-		/* width: 80px; */
 		margin: auto 10px;
-		/* background: #aab9b9;
-		border-radius: 8px; */
-		/* padding: 6px; */
 		color:#1234ff;
 	}
 	

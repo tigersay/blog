@@ -5,6 +5,21 @@
 <link rel="stylesheet" type="text/css" href="css/index.css" media="screen"  />
 <link rel="stylesheet" type="text/css" href="css/header.css"/>
 <script type="text/javascript" src="js/daohang.js" charset="gbk"></script>
+<style type="text/css">
+	.wenti{
+		border-radius: 8px; 
+		padding: 4px 4px;
+		margin: auto 4px;
+		cursor: pointer;
+		border-radius: 6px;
+		border: solid 2px #9bccdf;
+		opacity:0.9;
+	}
+	.wenti:hover {
+		background: #9bccef;
+	}
+</style>
+
 <title>tiger的个人空间</title>
 </head>
 <body>
@@ -30,6 +45,46 @@
 	<div class="label" style="background-color: #efcdab">
 		<a href="shanxi.html" target="_blank">晋善晋美</a>
 	</div>
+	
+	<div id="zuoluo" style="position: absolute; top: 150px; left: 500px" >
+		<img alt="" src="img/zuoluo.png" width="500" height="440" onclick="showwenti()">
+		<script type="text/javascript">
+			function showwenti(){
+				var a = document.getElementById("wenti");
+				if(a.style.display == "none"){
+					a.style.display = "";
+				}else{
+					a.style.display = "none";
+				}
+				dotip();
+			}
+		</script>
+	</div>
+	
+	<div id="wenti" style="position: absolute; top: 550px; left: 820px; display:none;" >
+		<span>哥帅不？</span>
+		<span id="shuai" onclick="doshuai()" class="wenti">好帅！</span>
+		<span id="bushuai" onclick="dobushuai()" class="wenti">一般吧。。</span>
+		<span id="tip" style="display:none;" onclick="dotip()" class="wenti"></span>
+		<script type="text/javascript">
+			function doshuai(){
+				var a = document.getElementById("tip");
+				a.style.display = "";
+				a.innerHTML = "<font color='green'>回答正确</font>";
+			}
+			function dobushuai(){
+				var a = document.getElementById("tip");
+				a.style.display = "";
+				a.innerHTML = "<font color='red'>回答错误</font>";
+			}
+			function dotip(){
+				var a = document.getElementById("tip");
+				a.style.display = "none";
+			}
+		</script>
+		
+	</div>
+	
 	
 	
 	
