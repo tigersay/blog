@@ -12,6 +12,18 @@ function createMenu(){
 			"</ul></div>";
 }
 
+
+/**
+ * 生成导航目录
+ */
+function createFooter(){
+	//var menu_bar = document.getElementById("footer");
+	//menu_bar.innerHTML = "<div id=\"footer\">Hello, My friend, Welcome here,Have a good time!</div><br><br>";
+}
+
+
+
+
 /**
  * 生成微博页面中的月份目录
  * @currMonth : 当前月份。
