@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>看电影</title>
+<style>
+
+	body{
+		 background: #e4ebe9  url('img/article2.png') repeat top left; 
+	}
+	
+	* {
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;
+		font-smoothing:antialiased;
+		text-rendering:optimizeLegibility;
+	}
+	
+	.play{
+		width:600px;
+		margin: auto;
+		margin-bottom: 50px;
+	}
+	
+	.videoBtn{
+		display: inline-block;
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		line-height: 1;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.25);
+		position: relative;
+		cursor: pointer;
+		font-size: 14px;
+		padding: 8px 14px 9px;
+		background-color: #2daebf;
+	}
+	
+	.videoBtn:hover {
+		background-color: #007d9a;
+	}
+	
+	#wangzhi { 
+		font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; 
+		width:420px;
+		border:1px solid #CCC;
+		background:#FFF;
+		padding:8px;
+	}
+	
+	#cmd{
+		width: 650px;
+		margin: 20px auto;
+		padding-left: 100px;
+	}
+	
+</style>
+</head>
+<body>
+
+	<span style="position: absolute;top: 12px; left:300px"><img alt="" src="img/yklogo.png"></span>
+	<div id="cmd">
+	<input type="text" id="wangzhi" placeholder="在这里粘贴优酷视频的网址，然后按下play" required autofocus>
+	<input type="button" id="playbtn" class="videoBtn" onclick="p()" value="play"></input> 
+	</div>
+	
+	<script type="text/javascript">
+		var vid="";
+		function p(){
+		
+		var a = document.getElementById("play");
+		var playbtn = document.getElementById("playbtn");
+		
+		if(a.style.display ==""){
+			a.style.display = "none";
+			playbtn.value = "play";
+		}else{
+			playbtn.value = "close";
+			
+			var url = document.getElementById("wangzhi").value;
+			url = url.replace(/\ /g,"");  //替换下空格
+			if(url == null || url == ""){
+				alert("请输入优酷视频的网址！");
+				return false;
+			}
+			
+			var x = url.indexOf("id_") + 3;
+			var y = url.indexOf(".html");
+			vid = url.substr(x, y-x);
+			var bed = document.getElementById("bed");
+			bed.src = "http://player.youku.com/player.php/sid/" + vid + "/v.swf"; 
+			a.style.display = "";
+			/* showVideo();  */
+		}
+		
+	}
+	</script>
+	
+	
+	
+
+	<div id="play" style="width:600px;height:500px;display:none;margin: auto" >
+		<!-- <script type="text/javascript" src="http://player.youku.com/jsapi">
+			function showVideo(){
+				if(vid="")return;
+			   player = new YKU.Player('play',{
+			       client_id: 'd0804b7294e1597a',
+			       vid: vid,
+			       show_related: true
+			       });
+		   	}
+		</script> -->
+		<embed id="bed" src="" allowFullScreen="true" quality="high" width="600" height="500" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+	</div>
+	
+
+	
+
+</body>
+</html>
