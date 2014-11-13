@@ -32,7 +32,7 @@
 	}
 	#daohang a {
 		text-decoration: none;
-		font-weight:normal;
+		font-weight:bold;
 		text-shadow: 0px 1px 1px #e4ebe9;
 		color: #000;
 		display: block;/*a标签转块级元素*/
