@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>看本地视频</title>
+<style>
+
+	body{
+		 background: #e4ebe9  url('img/article2.png') repeat top left; 
+	}
+	
+	* {
+		margin:0;
+		padding:0;
+	}
+</style>
+</head>
+<body>
+
+	
+	<script>  
+		function onInputFileChange() {  
+		   var file = document.getElementById('file').files[0];  
+		   var url = URL.createObjectURL(file);  
+		   console.log(url);  
+		   document.getElementById("video_id").src = url;  
+		}  
+	</script>  
+	
+	<div id="play" style="width:900px;height:650px;margin:10px auto" >
+		<div style="width:400px;margin:auto">选择MP4文件：<input type="file" id="file" onchange="onInputFileChange()"> </div>
+		<div style="margin:10px auto">
+			<video id="video_id" width="900" height="580" controls="controls" autoplay loop>
+				your browser does not support the video tag
+			</video>
+		 </div>
+	</div>
+	
+
+</body>
+</html>
