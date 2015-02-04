@@ -8,7 +8,7 @@ function createMenu(){
 			"<li><a href=\"index.html\">Home</a></li>" +
 			"<li><a href=\"blog.html\">Blog</a></li>" +
 			"<li><a href=\"app.html\">App</a></li>" +
-			"<li><a href=\"weibo/weibo_15_01.html\">Weibo</a></li>" +
+			"<li><a href=\"weibo/weibo_15_02.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
