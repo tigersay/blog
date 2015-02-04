@@ -8,7 +8,7 @@ function createMenu(){
 			"<li><a href=\"index.html\">Home</a></li>" +
 			"<li><a href=\"blog.html\">Blog</a></li>" +
 			"<li><a href=\"app.html\">App</a></li>" +
-			"<li><a href=\"weibo/weibo_15_02.html\">Weibo</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_15_02.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
@@ -30,15 +30,17 @@ function createFooter(){
  */
 function createWeiboMonthMenu(currMonth){
 	var menu_bar = document.getElementById("monthlist");
-	menu_bar.innerHTML = "<span id=\"seven\" class=\"month\"><a href=\"weibo_7.html\">2014年7月</a></span>" +
+	var content = "<div class=\"bannian\"><span id=\"seven\" class=\"month\"><a href=\"weibo_7.html\">2014年7月</a></span>" +
 			"<span id=\"eight\" class=\"month\"><a href=\"weibo_8.html\">2014年8月</a></span>" +
 			"<span id=\"nine\" class=\"month\"><a href=\"weibo_9.html\">2014年9月</a></span>" +
 			"<span id=\"ten\" class=\"month\"><a href=\"weibo_10.html\">2014年10月</a></span>" +
 			"<span id=\"eleven\" class=\"month\"><a href=\"weibo_11.html\">2014年11月</a></span>" +
-			"<span id=\"twelve\" class=\"month\"><a href=\"weibo_12.html\">2014年12月</a></span>" +
-			"<span id=\"15_01\" class=\"month\"><a href=\"weibo_15_01.html\">2015年1月</a></span>" +
+			"<span id=\"twelve\" class=\"month\"><a href=\"weibo_12.html\">2014年12月</a></span></div>" +
+			"<div class=\"bannian\"><span id=\"15_01\" class=\"month\"><a href=\"weibo_15_01.html\">2015年1月</a></span>" +
 	"<span id=\"15_02\" class=\"month\"><a href=\"weibo_15_02.html\">2015年2月</a></span>" ;
 	
+	content = content + "</div>";
+	menu_bar.innerHTML = content;
 	var curr = document.getElementById(currMonth);
 	curr.style.background = "#ababcd";
 	var h = curr.getElementsByTagName("a");
