@@ -5,9 +5,9 @@ function createMenu(){
 	var menu_bar = document.getElementById("header");
 	menu_bar.innerHTML = "<div id=\"daohang\"> " +
 			"<ul>" +
-			"<li><a href=\"index.html\">Home</a></li>" +
-			"<li><a href=\"blog.html\">Blog</a></li>" +
-			"<li><a href=\"app.html\">App</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/index.html\">Home</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/blog.html\">Blog</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_15_02.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
