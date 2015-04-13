@@ -7,9 +7,9 @@
 	}
 	
 	body{
-		/* background: #e4ebe9 ; */
- 		background: #e4ebe9  url('../img/article2.png') repeat top left;  
-	}
+		background: #e4ebe9 ; 
+ 		/* background: #e4ebe9  url('../img/article2.png') repeat top left;  
+	 */}
 	
 	
 	.weibo{

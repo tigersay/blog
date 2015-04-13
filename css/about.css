@@ -8,7 +8,7 @@
 	
 	body{
 		/**background:#99cbbb; -**/
-		background: #e4ebe9 url(../img/app_bg.png) repeat top left;
+		background: #e4ebe9 /* url(../img/app_bg.png) repeat top left */;
 	}
 	
 	#infomation{
