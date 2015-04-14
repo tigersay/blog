@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>java游戏开发杂谈</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		按键事件控制小方块的移动
+	</div>
+	<div class="content" style="font-size: 20px">
+	
+	
+	将第四小节<4 - 创建一个画布>中的GamePanel类的代码修改为如下：<br>
+运行后，按键盘上的四个方向键，观察小方块的移动。<br>
+现在每按一下，是让位置变化为1。<br>
+试着把1改为2和3，观察为3的时候，小方块能否保证在活动区域内。<br><br>
+
+<pre>
+import java.awt.Color; 
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JPanel;
+
+/**
+ * 使用四个方向键，控制小方块的上下左右的移动
+ */
+@SuppressWarnings("serial")
+public class GamePanel extends JPanel implements KeyListener{
+
+	/** 屏幕的宽和高 */
+	private int width,height;
+	
+	public GamePanel(int width, int height) {
+		this.width = width;
+		this.height = height;
+		this.setSize(width, height);
+		
+		//设置当前画布可以获得焦点。
+		this.setFocusable(true);
+		//设置自己为自己的按键事件监听器
+		this.addKeyListener(this);
+	}
+
+
+	/**
+	 * 覆盖paintComponent()方法
+	 * 参数中的Graphics是画笔，使用它可以绘制出字符串、直线、矩形、圆、图片等等。
+	 */
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		//画绿色背景
+		g.setColor(new Color(0x839156));
+		g.fillRect(0, 0, width, height);
+		
+		g.setColor(Color.black);
+		//画一个矩形活动区域
+		g.drawRect(160, 80, 200, 200);
+		//画一个小方块
+		g.fillRect(x, y, 40, 40);
+	}
+
+	/**小方块的初始位置*/
+	private int x = 240, y = 160;
+
+	
+	/**
+	 * 当键盘上的键被按下，程序会调用这个方法，来处理这个按下事件
+	 * 
+	 * 通过键盘上的四个方向键来控制小方块的移动
+	 */
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int keyCode = e.getKeyCode();  //根据keyCode能知道按下的是哪个键
+		switch(keyCode)
+		{
+		case KeyEvent.VK_LEFT:
+			if(x > 160){  //控制使得小方块不能超出到活动区域外
+				x = x - 1;
+			}
+			this.repaint();
+			break;
+		case KeyEvent.VK_RIGHT:
+			if(x < 320){    //矩形活动区域最左边的横坐标为160，宽为200，所以矩形的最右边的坐标为360. 小方块宽度为40. 360 - 40 = 320.
+				x = x + 1;
+			}
+			this.repaint();
+			break;
+		case KeyEvent.VK_UP:
+			if(y > 80){
+				y = y - 1;
+			}
+			this.repaint(); //让画布刷新一下，这样就能看到小方块位置发生了变化。
+			break;
+		case KeyEvent.VK_DOWN:
+			if(y < 240){
+				y = y + 1;
+			}
+			this.repaint();
+			break;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	}
+
+}
+</pre>
+	
+	
+	
+	</div>
+	
+</body>
+</html>

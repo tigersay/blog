@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>java游戏开发杂谈</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		关于窗体、画布、画笔
+	</div>
+	<div class="content" style="font-size: 20px">
+	
+	窗体JFrame，表示操作系统的一个窗口。可以想象成绘画用的画板。<br>
+	画布JPanel, 用来放到JFrame中，可在上面作画。可以想象成绘画用的画纸。<br><br>
+	
+	画笔Graphics, 用来绘画，提供了一些最基础的绘制方法。<br>
+	比如drawRect用来绘制一个矩形，drawString用来绘制字符串。<br>
+	drawImage用来绘制图片，图片对象通过参数传入。<br><br>
+	
+	在JPanel类的paintComponent方法中，参数自带了Graphics画笔对象。<br>
+	直接使用这个参数对象来绘制即可。<br><br>
+	
+	再说一下事件监听器：<br>
+	一般游戏要处理两种事件，按键事件和鼠标事件。<br><br>
+	
+	以按键事件为例，<br>
+	KeyListener是为按键事件接口，<br>
+	实现了这个接口的类，就可以用作按键事件监听器。<br><br>
+	
+	要想让画布能接受按键事件的控制，<br>
+	就需要给画布设置一个按键事件监听器。<br>
+	这样当发生按键事件的时候，监听器的相关方法会被调用。<br>
+	在这些方法中使用一些逻辑，来控制画布上的图像的变化。<br><br>
+	
+	下一节讲提供一个简单的按键控制的代码示例。<br><br>
+	
+	（这些内容，建议读者看一下书上的awt和swing章节）<br>
+		
+	
+	</div>
+	
+</body>
+</html>

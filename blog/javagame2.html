@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>java游戏开发杂谈</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		创建一个窗口
+	</div>
+	<div class="content" style="font-size: 20px">
+	
+	用Eclipse新建一个java工程。建一个类GameFrame.java.<br>
+
+	其中代码如下：<br>
+	<code><pre>
+	
+		import javax.swing.JFrame;
+
+		public class GameFrame extends JFrame {
+		
+			public GameFrame() {
+				//设置窗口标题
+				this.setTitle("Hello cumt");
+				//设置窗口大小
+				this.setSize(600, 400); 
+				//设置能否调整窗口大小
+				this.setResizable(false); 
+				//这句会使得窗口在屏幕上居中显示
+				this.setLocationRelativeTo(null);
+				//当关闭窗口的时候退出程序
+				this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
+				//把窗口显示出来
+				this.setVisible(true); 
+			}
+		
+			/**
+			 * 主方法
+			 */
+			public static void main(String[] args) {
+				GameFrame frame = new GameFrame();
+			}
+		}
+	
+	</pre></code>
+	运行之，就会出现一个窗口。<br><br><br>
+	
+	
+	
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>java游戏开发杂谈</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		创建一个画布
+	</div>
+	<div class="content" style="font-size: 20px">
+	
+	在上一节的工程里，新建一个类GamePanel.java.<br>
+其中代码如下：<br>
+
+<pre><code>
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+/**
+ * 一个画布
+ */
+@SuppressWarnings("serial")
+public class GamePanel extends JPanel {
+
+	/** 屏幕的宽和高 */
+	private int width,height;
+	
+	public GamePanel(int width, int height) {
+		this.width = width;
+		this.height = height;
+		this.setSize(width, height);
+	}
+
+
+	/**
+	 * 覆盖paintComponent()方法
+	 * 参数中的Graphics是画笔，使用它可以绘制出字符串、直线、矩形、圆、图片等等。
+	 */
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		//画绿色背景
+		g.setColor(new Color(0x839156));
+		g.fillRect(0, 0, width, height);
+		
+		//画一行字
+		g.setColor(Color.BLUE);
+		g.drawString("武林至尊，宝刀南湖", 100, 80);
+		
+		//再画一行字
+		g.setColor(Color.black);
+		g.drawString("文昌不出，谁与争锋！", 300, 80);
+		
+		//画一条线
+		g.drawLine(5, 120, 580, 120);
+		
+		//画一个矩形(不填充内部)
+		g.drawRect(100, 160, 100, 60);
+		
+		//画一个矩形(填充内部)
+		g.fillRect(300, 160, 100, 60);
+	}
+	
+}
+</code></pre>
+
+
+接着把上一节的GameFrame类修改为：
+
+
+<pre><code>
+import javax.swing.JFrame;
+
+/**
+ * 游戏窗口的创建
+ */
+@SuppressWarnings("serial")
+public class GameFrame extends JFrame {
+
+	private int width = 600, height = 400;
+	private GamePanel panel;
+	
+	
+	public GameFrame() {
+		//设置窗口标题
+		this.setTitle("Hello cumt");
+		
+		//创建一个画布
+		panel = new GamePanel(width, height);
+		//把画布加入到窗体中
+		getContentPane().add(panel, "Center");
+		
+		//设置窗口大小
+		this.setSize(width, height);
+		
+		//设置能否调整窗口大小
+		this.setResizable(false); 
+
+		//这句会使得窗口在屏幕上居中显示
+		this.setLocationRelativeTo(null);
+
+		//当关闭窗口的时候退出程序
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		
+		//把窗口显示出来
+		this.setVisible(true); 
+	}
+	
+	/**
+	 * 主方法
+	 */
+	public static void main(String[] args) {
+		GameFrame frame = new GameFrame();
+	}
+
+}
+
+</code></pre> <br>
+
+运行，可以看到这个窗口相比上一节，丰富了一些。<br><br>
+	
+	
+	
+	</div>
+	
+</body>
+</html>

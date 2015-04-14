@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>连连看--盘面布局的算法</title>
+<link rel="stylesheet" type="text/css" href="../css/artical.css">
+</head>
+<body>
+	
+	<div class="title">
+		连连看--盘面布局的算法
+	</div>
+	<div class="content">
+	
+	算法一：<br><br>
+
+用一个二维数组来保存盘面数据。<br>
+盘面数据为0--9，分别对应10个图片。<br>
+遍历该数组，<br>
+先随机出一个图片index，记为imgIndex。<br>
+接着把盘面数组中的第一个空位赋值为imgIndex.<br>
+再把盘面中随机的另一个空位赋为imgIndex.<br><br>
+
+应该设一个变量number，<br>
+用来存储当前已经赋值了的个数。<br>
+每给一个空位赋值以后，该值则加一。<br>
+当该值为二维数组大小的时候，即可遍历结束。<br>
+于是遍历只需要遍历一半即可。<br><br>
+
+（可参考以前做的pc版本连连看，是用的该算法）<br><br>
+
+算法二：<br>
+假设盘面共有a行，b列。<br>
+则先初始化一个长度为a*b的List，设为m。<br>
+其中的值为大小从0到a*b-1排列。<br><br>
+
+再新建另一个List，设为n。<br>
+不断的删除掉m中的随机一个元素，将其加入到n.<br>
+该过程结束后，n中将是混淆后的0到a*b-1的排列了。<br><br>
+
+运行到此时，其实是做了一个类似扑克牌的洗牌。<br>
+然后n这个链表，其实每一个值，可以对应二维数组中的一个位置。<br>
+对链表的前后两个值，让他们对应的位置的值也相同，即用同一个图片。<br><br>
+
+按这个原理下来，还是可以得到一个随机分布的盘面。<br><br>
+
+-----------------------------------------------------<br><br>
+
+连连看的盘面布局，有两个要求，1，盘面要打乱。2，图片要成对的出现。<br>
+
+	<br>
+
+	<br>
+	</div>
+	
+</body>
+</html>
