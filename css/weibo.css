@@ -129,7 +129,17 @@
 		height:617px; 
 	}
 	
+	.xingxixian{
+		margin: 5px 5px; 
+		transition: 1s width, 1s height; 
+		width:25px;
+		height:25px; 
+	}
 	
+	.xingxixian:hover{
+		width:777px;
+		height:538px; 
+	}
 	
 	
 	
