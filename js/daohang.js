@@ -8,7 +8,7 @@ function createMenu(){
 			"<li><a href=\"http://tigersay.github.io/blog/index.html\">Home</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/blog.html\">Blog</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_15_07.html\">Weibo</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_15_08.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
@@ -44,7 +44,9 @@ function createWeiboMonthMenu(currMonth){
 	"<span id=\"15_05\" class=\"month\"><a href=\"weibo_15_05.html\">2015年5月</a></span>" + 
 	"<span id=\"15_06\" class=\"month\"><a href=\"weibo_15_06.html\">2015年6月</a></span></div>" + 
 	"<div class=\"bannian\">" + 
-	"<span id=\"15_07\" class=\"month\"><a href=\"weibo_15_07.html\">2015年7月</a></span>" ; 
+	"<span id=\"15_07\" class=\"month\"><a href=\"weibo_15_07.html\">2015年7月</a></span>" +
+	"<span id=\"15_08\" class=\"month\"><a href=\"weibo_15_08.html\">2015年8月</a></span>" ;
+	
 	
 	content = content + "</div>";
 	menu_bar.innerHTML = content;
