@@ -153,5 +153,16 @@
 		height:438px; 
 	}
 	
+	.jiangxiaobai{
+		margin: 5px 5px; 
+		transition: 1s width, 1s height; 
+		width:25px;
+		height:25px; 
+	}
+	
+	.jiangxiaobai:hover{
+		width:200px;
+		height:300px; 
+	}
 	
 	
