@@ -254,7 +254,7 @@ p.justify { text-align: justify; }
 	-webkit-transform:perspective(800px) rotateY(0);
 	transform:perspective(800px) rotateY(0);	
 }
-.portfolio-item:hover > img {
+.portfolio-item:FOCUS > img {
 	-webkit-transform:perspective(800px) rotateY(-179.9deg);
 	-moz-transform:perspective(800px) rotateY(-179.9deg);
 	transform:perspective(800px) rotateY(-179.9deg);	
