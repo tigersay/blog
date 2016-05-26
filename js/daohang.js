@@ -9,6 +9,7 @@ function createMenu(){
 			"<li><a href=\"http://tigersay.github.io/blog/index.html\">Home</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/blog.html\">Blog</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/note.html\">Note</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_16_05.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
