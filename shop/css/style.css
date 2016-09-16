@@ -7721,7 +7721,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 #fh5co-board .item .image-popup:hover img {
-  opacity: .5;
+  /* opacity: .5; */
 }
 
 .js .animate-box {

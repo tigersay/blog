@@ -44,7 +44,7 @@
 	// Magnific Popup
 	
 	var magnifPopup = function() {
-		/*$('.image-popup').magnificPopup({
+		$('.image-popup').magnificPopup({
 			type: 'image',
 			removalDelay: 300,
 			mainClass: 'mfp-with-zoom',
@@ -67,7 +67,7 @@
 				return openerElement.is('img') ? openerElement : openerElement.find('img');
 				}
 			}
-		});*/
+		});
 	};
 
 
@@ -90,10 +90,10 @@
 
 	
 	$(function(){
-		magnifPopup();
+		//magnifPopup();
 		offCanvass();
 		mobileMenuOutsideClick();
-		animateBoxWayPoint();
+		//animateBoxWayPoint();
 	});
 
 
