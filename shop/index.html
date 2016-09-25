@@ -80,9 +80,41 @@
         		</div>
         		<div class="fh5co-desc">山西特产 闻喜煮饼 1盒包邮 正宗俊祥慧 闻喜煮饼400g 独家特价</div>
         	</div> -->
+        	加载中，请稍等片刻。。
         	
-        	
-        	<script type="text/javascript">
+        </div>
+        </div>
+       </div>
+	</div>
+
+	<footer id="fh5co-footer">
+		
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-12 text-center">
+					<p><small>&copy; 点击图片即可跳转到淘宝网上购买. </small></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	
+	
+
+
+	<!-- 统计 -->
+	<!-- <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff50f01d0ffd2e265fff98d40584f3145' type='text/javascript'%3E%3C/script%3E"));
+	</script>  -->
+
+	
+	</body>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>  <!-- 这一句必须放在下面这堆js代码之前，因为里面调用了一句jquery -->
+	<script type="text/javascript">
         	
         	  var links = [
         	             "http://s.click.taobao.com/JyhGMTx",
@@ -102,7 +134,6 @@
         	             "http://s.click.taobao.com/7YmGMTx",
         	             "http://s.click.taobao.com/15oGMTx",
         	             "http://s.click.taobao.com/BCgGMTx",
-        	             "http://s.click.taobao.com/LpnGMTx",
         	             "http://s.click.taobao.com/jihGMTx",
         	             "http://s.click.taobao.com/bqpGMTx"
         	            ]; 
@@ -126,13 +157,10 @@
 			"http://img01.taobaocdn.com/bao/uploaded/i1/TB1ghdWNXXXXXaPXpXXXXXXXXXX_!!0-item_pic.jpg",
 			"http://img03.taobaocdn.com/bao/uploaded/i3/TB1y.JqMpXXXXcNXXXXXXXXXXXX_!!0-item_pic.jpg",
 			"http://img01.taobaocdn.com/bao/uploaded/i1/2826918547/TB20eW6mVXXXXbYXpXXXXXXXXXX_!!2826918547.jpg",
-			"http://img04.taobaocdn.com/bao/uploaded/i4/TB1gKixKVXXXXajXFXXXXXXXXXX_!!0-item_pic.jpg",
 			"http://img04.taobaocdn.com/bao/uploaded/i4/TB13LREKXXXXXa8XVXXXXXXXXXX_!!0-item_pic.jpg",
 			"http://img02.taobaocdn.com/bao/uploaded/i2/TB1nHg6HXXXXXbHaXXXXXXXXXXX_!!0-item_pic.jpg"
 
         	             ]; 
-        	
-        	
         	
         	
         	var names = [
@@ -153,13 +181,13 @@
         	             "山西特产 鑫炳记太谷饼早餐食品传统糕点零食小吃点心整箱70g*30",
         	             "山西省地图贴图1.1米X0.8米中华人民共和国分省系列地图 山西省地图 ",
         	             "山西特产兆辉烤馍片 烤馍干300克办公室休闲零食 养胃 3份包邮",
-        	             "英语口语900句自学速成教材+必学发音音标 日常英语口语大全",
         	             "1盒包邮 正宗俊祥慧 山西特产 闻喜煮饼400g 独家特价 2送1,3送2",
         	             "山西运城土特产小吃 稷山土炒馍 面蛋蛋馍农家炒棋子豆 休闲零食"
         	             ];
         	
+        	var content = "";
         	for ( var i = 0; i < names.length; i++) {
-        		document.write("<div class=\"item\">");
+        		/* document.write("<div class=\"item\">");
         		document.write("<div class=\"animate-box\">");
 				document.write("<a href=\"");
 				document.write(links[i]);
@@ -171,51 +199,41 @@
 				document.write(names[i]);
 				document.write("</div>");
 				document.write("</div>");
-				document.write("</div>");
+				document.write("</div>"); */
+				content += "<div class=\"item\">";
+				content += "<div class=\"animate-box\">";
+				content += "<a href=\"";
+				content += links[i];
+				content += "\" class=\"image-popup fh5co-board-img\" target=\"_blank\">";
+				content += "<img src=\"";
+				content += imgs[i];
+				content += "\" alt=\"图片缓冲中。。\"></a>";
+				content += "<div class=\"fh5co-desc\">";
+				content += names[i];
+				content += "</div>";
+				content += "</div>";
+				content += "</div>";
 			}
         	
-        	
+        	$("#fh5co-board").html(content);
         	</script>
-        	
-        	
-        	
-        </div>
-        </div>
-       </div>
-	</div>
-
-	<footer id="fh5co-footer">
-		
-		<div class="container">
-			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					<p><small>&copy; 点击图片即可跳转到淘宝网上购买. </small></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
 	
-	<!-- Bootstrap -->
-	<!-- <script src="js/bootstrap.min.js"></script> -->
+	
 	
 	<!-- Salvattore -->
 	<script src="js/salvattore.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
-	
-
-
-	<!-- 统计 -->
-	<!-- <script type="text/javascript">
-	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff50f01d0ffd2e265fff98d40584f3145' type='text/javascript'%3E%3C/script%3E"));
-	</script>  -->
-
-	
-	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
