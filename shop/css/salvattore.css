@@ -27,15 +27,13 @@
 
 
 #fh5co-board[data-columns]::before {
-    /* content: '4 .column.size-1of4'; */
-    content: 'please wait a moment...';
+    content: '4 .column.size-1of4'; 
 }
 
 /* Configurate salvattore with media queries */
 @media screen and (max-width: 450px) {
     #fh5co-board[data-columns]::before {
-        /* content: '1 .column'; */
-        content: 'please wait a moment...';
+        content: '1 .column'; 
     }
 }
 
