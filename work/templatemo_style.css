@@ -447,18 +447,18 @@ span.btn {
 		margin-left: 0; 
 		margin-right: 0;	
 	}
-	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
+	.main-nav ul.nav li.active { padding: 0; padding: 1% 0; }
 }
 @media screen and (max-width:400px) {
 	.main-nav li {
-		width: 80px;
+		width: 90px;
 	    margin-left: 0;
 	    margin-right: 0;
 	    font-size: 12px;
 	    text-align: center;
 	    line-height: 30px;
 	}
-	.main-nav ul.nav li a { padding: 2%; }
-	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
-	.main-nav ul.nav li a:hover { padding: 2%; }
+	.main-nav ul.nav li a { padding: 1%; }
+	.main-nav ul.nav li.active { padding: 0; padding: 1% 0; }
+	.main-nav ul.nav li a:hover { padding: 1%; }
 }
