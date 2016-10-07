@@ -414,9 +414,9 @@ span.btn {
 		width: 96%;
 
 	}
-	.main-nav ul.nav li a { padding: 2%; }
-	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
-	.main-nav ul.nav li a:hover { padding: 2%; }
+	.main-nav ul.nav li a { padding: 1%; }
+	.main-nav ul.nav li.active { padding: 1%; }
+	.main-nav ul.nav li a:hover { padding: 1%; }
 
 	header {
 		padding-top: 0;
@@ -447,7 +447,7 @@ span.btn {
 		margin-left: 0; 
 		margin-right: 0;	
 	}
-	.main-nav ul.nav li.active { padding: 0; padding: 1% 0; }
+	.main-nav ul.nav li.active {padding: 1%;}
 }
 @media screen and (max-width:400px) {
 	.main-nav li {
@@ -459,6 +459,6 @@ span.btn {
 	    line-height: 30px;
 	}
 	.main-nav ul.nav li a { padding: 1%; }
-	.main-nav ul.nav li.active { padding: 0; padding: 1% 0; }
+	.main-nav ul.nav li.active {padding: 1%; }
 	.main-nav ul.nav li a:hover { padding: 1%; }
 }
