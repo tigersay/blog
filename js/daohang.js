@@ -11,7 +11,7 @@ function createMenu(){
 			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/work/work_16_09.html\" target='_blank'>Work</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/shop\" target='_blank'>Shop</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_16_10.html\">Weibo</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_16_11.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
@@ -65,7 +65,8 @@ function createWeiboMonthMenu(currMonth){
 	"<span id=\"16_07\" class=\"month\"><a href=\"weibo_16_07.html\">2016年7月</a></span>" +
 	"<span id=\"16_08\" class=\"month\"><a href=\"weibo_16_08.html\">2016年8月</a></span>" +
 	"<span id=\"16_09\" class=\"month\"><a href=\"weibo_16_09.html\">2016年9月</a></span>" +
-	"<span id=\"16_10\" class=\"month\"><a href=\"weibo_16_10.html\">2016年10月</a></span>" 
+	"<span id=\"16_10\" class=\"month\"><a href=\"weibo_16_10.html\">2016年10月</a></span>" +
+	"<span id=\"16_11\" class=\"month\"><a href=\"weibo_16_11.html\">2016年11月</a></span>" 
 	;
 	
 	
