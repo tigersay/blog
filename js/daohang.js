@@ -9,7 +9,7 @@ function createMenu(){
 			"<li><a href=\"http://tigersay.github.io/blog/index.html\">Home</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/blog.html\">Blog</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/work/work_17_01_03.html\" target='_blank'>Work</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/work/work_17_07_09.html\" target='_blank'>Work</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/book\" target='_blank'>Book</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_17_09.html\">Weibo</a></li>" +
 			"</ul></div>";
@@ -102,9 +102,12 @@ function createWeiboMonthMenu(currMonth){
 function createWorkJiduMenu(currJidu){
 	var menu_bar = document.getElementById("monthlist");
 	var content = 
+	"<span id=\"16_04_06\" class=\"month\"><a href=\"work_16_04_06.html\">2016年4月到6月</a></span>" 	+
 	"<span id=\"16_07_09\" class=\"month\"><a href=\"work_16_07_09.html\">2016年7月到9月</a></span>" 	+
 	"<span id=\"16_10_12\" class=\"month\"><a href=\"work_16_10_12.html\">2016年10月到12月</a></span>" +
-	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" ;
+	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" +
+	"<span id=\"17_04_06\" class=\"month\"><a href=\"work_14_06_03.html\">2017年4月到6月</a></span>" +
+	"<span id=\"17_07_09\" class=\"month\"><a href=\"work_17_07_09.html\">2017年7月到9月</a></span>" ;
 	
 	content = content + "</div>";
 	menu_bar.innerHTML = content;
