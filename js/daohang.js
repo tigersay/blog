@@ -10,8 +10,8 @@ function createMenu(){
 			"<li><a href=\"http://tigersay.github.io/blog/blog.html\">Blog</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/app.html\">App</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/work/work_16_09.html\" target='_blank'>Work</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/shop\" target='_blank'>Shop</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_17_09.html\">Weibo</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/book\" target='_blank'>Book</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_17_01_03.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
@@ -90,3 +90,37 @@ function createWeiboMonthMenu(currMonth){
 	var h = curr.getElementsByTagName("a");
 	h.href = "#";
 }
+
+
+
+
+
+/**
+ * 生成工作笔记中的月份目录
+ * @currMonth : 当前季度。
+ */
+function createWorkJiduMenu(currJidu){
+	var menu_bar = document.getElementById("monthlist");
+	var content = 
+	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" 
+	;
+	
+	
+	content = content + "</div>";
+	menu_bar.innerHTML = content;
+	var curr = document.getElementById(currMonth);
+	curr.style.background = "#ababcd";
+	var h = curr.getElementsByTagName("a");
+	h.href = "#";
+}
+
+
+
+
+
+
+
+
+
+
+
