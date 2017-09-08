@@ -108,7 +108,7 @@ function createWorkJiduMenu(currJidu){
 	
 	"<div class=\"bannian\">" +
 	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" +
-	"<span id=\"17_04_06\" class=\"month\"><a href=\"work_14_06_03.html\">2017年4月到6月</a></span>" +
+	"<span id=\"17_04_06\" class=\"month\"><a href=\"work_14_04_06.html\">2017年4月到6月</a></span>" +
 	"<span id=\"17_07_09\" class=\"month\"><a href=\"work_17_07_09.html\">2017年7月到9月</a></span>" ;
 	
 	content = content + "</div>";
