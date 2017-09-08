@@ -102,9 +102,9 @@ function createWeiboMonthMenu(currMonth){
 function createWorkJiduMenu(currJidu){
 	var menu_bar = document.getElementById("monthlist");
 	var content = 
-	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" 
-	;
-	
+	"<span id=\"16_07_09\" class=\"month\"><a href=\"work_16_07_09.html\">2016年7月到9月</a></span>" 	+
+	"<span id=\"16_10_12\" class=\"month\"><a href=\"work_16_10_12.html\">2016年10月到12月</a></span>" +
+	"<span id=\"17_01_03\" class=\"month\"><a href=\"work_17_01_03.html\">2017年1月到3月</a></span>" ;
 	
 	content = content + "</div>";
 	menu_bar.innerHTML = content;
