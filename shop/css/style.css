@@ -1390,7 +1390,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -1407,17 +1407,8 @@ textarea {
 }
 
 a {
-  color: #EF5353;
+  
   text-decoration: none;
-}
-a:hover, a:focus {
-  color: #e11515;
-  text-decoration: underline;
-}
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
 }
 
 figure {
