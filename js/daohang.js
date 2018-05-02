@@ -1,8 +1,5 @@
-﻿
-/**
- * 生成导航目录
- */
-function createMenu(){
+﻿function createMenu(){
+
 	var menu_bar = document.getElementById("header");
 	menu_bar.innerHTML = "<div id=\"daohang\"> " +
 			"<ul>" +
@@ -15,15 +12,13 @@ function createMenu(){
 			"</ul></div>";
 }
 
-
-
-
 /**
  * 生成底部栏
  */
 function createFooter(){
 	//var menu_bar = document.getElementById("footer");
 	//menu_bar.innerHTML = "<div id=\"footer\">Hello, My friend, Welcome here,Have a good time!</div><br><br>";
+
 }
 
 
@@ -88,7 +83,7 @@ function createWeiboMonthMenu(currMonth){
 	"<span id=\"18_02\" class=\"month\"><a href=\"weibo_18_02.html\">2018年2月</a></span>" +
         "<span id=\"18_03\" class=\"month\"><a href=\"weibo_18_03.html\">2018年3月</a></span>" +
 	"<span id=\"18_04\" class=\"month\"><a href=\"weibo_18_04.html\">2018年4月</a></span>" +
-	"<span id=\"18_05\" class=\"month\"><a href=\"weibo_18_05.html\">2018年5月</a></span>" +
+	"<span id=\"18_05\" class=\"month\"><a href=\"weibo_18_05.html\">2018年5月</a></span>" 
 
 	;
 	
@@ -128,13 +123,6 @@ function createWorkJiduMenu(currJidu){
 	var h = curr.getElementsByTagName("a");
 	h.href = "#";
 }
-
-
-
-
-
-
-
 
 
 
