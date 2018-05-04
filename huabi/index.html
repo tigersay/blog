@@ -37,11 +37,6 @@
 		$(window).mousemove(function(e){mousemove(e)});
 		$(window).mouseup(function(e){mouseup(e)});
 		
-		//手机屏幕上的触摸事件监听
-		document.addEventListener('touchstart',touch, false);  
-    	document.addEventListener('touchmove',touch, false);  
-    	document.addEventListener('touchend',touch, false);  
-      
 		//开启游戏
 		run();
 	}
@@ -140,26 +135,31 @@
 	
 	
 	/*-------触摸事件处理-----*/
-	function touch (event){  
-        var event = event || window.event;  
-        
-        switch(event.type){  
-            case "touchstart":  
-                mousedown(event);
-                break;  
-            case "touchend":  
-                mouseup(event); 
-                break;  
-            case "touchmove":  
-            	mousemove(event);
-                break;  
-        }  
-
-    }
-	
-	
-	
-	
+	canvas.ontouchstart = function(e) {
+		dx = e.pageX;
+		dy = e.pageY;
+		drag_x = e.pageX;
+		drag_y = e.pageY;
+	};
+	canvas.ontouchmove = function(e) {
+		mx = e.pageX;
+		my = e.pageY;
+		
+		if(isDownGameView()){
+			huabi.add(drag_x, drag_y, mx, my);
+			drag_x = mx;
+			drag_y = my;
+		}
+	};
+	canvas.ontouchend = function(e) {
+		ux = e.pageX;
+		uy = e.pageY;
+		
+		if(isDownGameView()){
+			huabi.add(drag_x, drag_y, ux, uy);
+			resetDownPointer();
+		}	
+	};
 	
 	
 	
