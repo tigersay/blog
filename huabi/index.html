@@ -37,6 +37,10 @@
 		$(window).mousemove(function(e){mousemove(e)});
 		$(window).mouseup(function(e){mouseup(e)});
 		
+		document.addEventListener('touchstart',touch, false);  
+    	document.addEventListener('touchmove',touch, false);  
+    	document.addEventListener('touchend',touch, false);  
+		
 		//开启游戏
 		run();
 	}
@@ -81,7 +85,7 @@
 		if(isPause == false){
 			paint();
 		}
-		setTimeout(run, 30);	
+		setTimeout(run, 20);	
 	}
 	
 	var pauseTimeout ;
@@ -117,9 +121,11 @@
 		my = e.pageY;
 		
 		if(isDownGameView()){
-			huabi.add(drag_x, drag_y, mx, my);
-			drag_x = mx;
-			drag_y = my;
+			if(drag_x != mx || drag_y != my){
+				huabi.add(drag_x, drag_y, mx, my);
+				drag_x = mx;
+				drag_y = my;
+			}
 		}
 		
 	}
@@ -128,14 +134,32 @@
 		uy = e.pageY;
 		
 		if(isDownGameView()){
-			huabi.add(drag_x, drag_y, ux, uy);
+//			if(drag_x != ux || drag_y != uy){
+//				huabi.add(drag_x, drag_y, ux, uy);
+//			}	
 			resetDownPointer();
 		}	
 	}
 	
 	
 	/*-------触摸事件处理-----*/
-	canvas.ontouchstart = function(e) {
+	function touch (event){  
+        var event = event || window.event;  
+        switch(event.type){  
+            case "touchstart":  
+                touchstart(event);
+                break;  
+            case "touchend":  
+                  touchend(event);
+                break;  
+            case "touchmove":  
+                 touchmove(event);
+                break;  
+        }  
+
+    }  
+	
+	function touchstart(e) {
 		
 		alert("ontouchstart");
 		
@@ -144,8 +168,8 @@
 		drag_x = e.pageX;
 		drag_y = e.pageY;
 	};
-	canvas.ontouchmove = function(e) {
-		
+	
+	function touchmove(e) {
 		
 		mx = e.pageX;
 		my = e.pageY;
@@ -156,7 +180,8 @@
 			drag_y = my;
 		}
 	};
-	canvas.ontouchend = function(e) {
+	
+	function touchend(e) {
 		ux = e.pageX;
 		uy = e.pageY;
 		alert("ontouchend");
