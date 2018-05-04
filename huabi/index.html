@@ -160,9 +160,6 @@
     }  
 	
 	function touchstart(e) {
-		
-		alert("ontouchstart");
-		
 		dx = e.pageX;
 		dy = e.pageY;
 		drag_x = e.pageX;
@@ -184,7 +181,6 @@
 	function touchend(e) {
 		ux = e.pageX;
 		uy = e.pageY;
-		alert("ontouchend");
 		
 		if(isDownGameView()){
 			huabi.add(drag_x, drag_y, ux, uy);
