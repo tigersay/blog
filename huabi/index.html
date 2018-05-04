@@ -1,0 +1,171 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="canvas.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js" charset="UTF-8"></script>
+<script type="text/javascript" src="tool.js" charset="UTF-8"></script>
+<script type="text/javascript" src="huabi.js" charset="UTF-8"></script>
+
+<script type="text/javascript" charset="UTF-8">
+
+   	var canvas ;
+   	var context ;
+
+	var canvasWidth , canvasHeight ;
+	
+	//设置游戏区域,这里的game_w,game_h可以设为固定数值，但是应小于屏幕。 那么游戏区域就会居中在屏幕中央显示。
+	var game_x, game_y, game_w = $(window).get(0).innerWidth - 20, game_h = $(window).get(0).innerHeight - 20;  
+
+	var huabi = new huabi();	
+	
+
+	$(document).ready(function(){
+		init();
+	});	
+
+	//初始化
+	function init(){
+
+		canvas = $("#myCanvas");
+		context = canvas.get(0).getContext("2d");
+		
+		resizeCanvas();
+		$(window).resize(resizeCanvas);
+		$(window).mousedown(function(e){mousedown(e)});
+		$(window).mousemove(function(e){mousemove(e)});
+		$(window).mouseup(function(e){mouseup(e)});
+
+		//开启游戏
+		run();
+	}
+
+
+	function resizeCanvas(){
+		//使canvas填满浏览器窗口
+		canvas.attr("width",$(window).get(0).innerWidth);
+		canvas.attr("height",$(window).get(0).innerHeight);
+		canvasWidth = canvas.width();
+		canvasHeight = canvas.height();
+
+		game_x = (canvasWidth - game_w) / 2;
+		game_y = (canvasHeight - game_h) / 2;
+
+		paint(); //这里马上重新绘制一下，不然界面会有闪烁
+	}
+	
+	
+
+	function logic(){
+		huabi.logic();
+	}
+
+	function paint(){
+		//画背景
+		context.fillStyle = "rgb(60,60,125)";
+		context.fillRect(0,0,canvasWidth,canvasHeight);
+		//画游戏区域
+		context.fillStyle = "rgb(210,250,250)"
+   		context.fillRect(game_x, game_y,game_w,game_h);
+
+		huabi.paint();
+	}
+	
+	var isPause = false;
+	
+	function run(){
+		if(isPause == false){
+			logic();
+		}
+		if(isPause == false){
+			paint();
+		}
+		setTimeout(run, 30);	
+	}
+	
+	var pauseTimeout ;
+	
+	function pause(time)
+	{
+		if(isPause == false){
+			isPause = true;
+			pauseTimeout = setTimeout(pause, time);
+		}else{
+			isPause = false;
+			clearTimeout(pauseTimeout);
+		}
+	}
+
+	var drag_x, drag_y;
+	
+	/*-------鼠标事件处理-----*/
+	var dx,dy,mx,my,ux,uy;
+	var lmx, lmy; //上一下鼠标move位置
+	var isRight = false; //是否右键点击的
+
+	function mousedown(e){
+		dx = e.pageX;
+		dy = e.pageY;
+		isRight = (e.button == 2);
+		
+		drag_x = e.pageX;
+		drag_y = e.pageY;
+	}
+	function mousemove(e){
+		mx = e.pageX;
+		my = e.pageY;
+		
+		if(isDownGameView()){
+			huabi.add(drag_x, drag_y, mx, my);
+			drag_x = mx;
+			drag_y = my;
+		}
+		
+	}
+	function mouseup(e){
+		ux = e.pageX;
+		uy = e.pageY;
+		
+		if(isDownGameView()){
+			huabi.add(drag_x, drag_y, ux, uy);
+			resetDownPointer();
+		}	
+		
+	}
+	//判断事件是否发生在某个区域内
+	function isDownRect(x,y,w,h){
+		if(dx >= x && dx <= x + w && dy >= y && dy <= y + h){return true;}
+	}
+	function isMoveRect(x,y,w,h){
+		if(mx >= x && mx <= x + w && my >= y && my <= y + h){return true;}
+	}
+	function isUpRect(x,y,w,h){
+		if(ux >= x && ux <= x + w && uy >= y && uy <= y + h){return true;}
+	}
+	
+	//注意：：：一定要在调用了判断是否点击到某处的方法以后，，调用下面这两个方法，，处理之，，否则可能出现异常。
+	function resetDownPointer(){
+		dx = -1; dy = -1;
+	}
+	function resetUpPointer(){
+		ux = -1; uy = -1;
+	}
+	
+	function isDownGameView(){
+		return isDownRect(game_x, game_y, game_w, game_h);
+	}
+	
+	
+	
+	
+</script>
+
+<title>tiger的画笔</title>
+</head>
+
+<body ondragstart="window.event.returnValue=false" 
+	oncontextmenu="window.event.returnValue=false" 
+	onselectstart="event.returnValue=false">
+<canvas id="myCanvas" width="1000" height="600"/>
+</body>
+
+</html> 
