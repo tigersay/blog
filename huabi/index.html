@@ -136,12 +136,17 @@
 	
 	/*-------触摸事件处理-----*/
 	canvas.ontouchstart = function(e) {
+		
+		alert("ontouchstart");
+		
 		dx = e.pageX;
 		dy = e.pageY;
 		drag_x = e.pageX;
 		drag_y = e.pageY;
 	};
 	canvas.ontouchmove = function(e) {
+		
+		
 		mx = e.pageX;
 		my = e.pageY;
 		
@@ -154,6 +159,7 @@
 	canvas.ontouchend = function(e) {
 		ux = e.pageX;
 		uy = e.pageY;
+		alert("ontouchend");
 		
 		if(isDownGameView()){
 			huabi.add(drag_x, drag_y, ux, uy);
