@@ -2,20 +2,40 @@
 /*游戏逻辑*/
 function plj(){
 
-	var state = 1;//状态为1，表示是拼写阶段。 2为天女散花阶段。 3,佐罗出现
-
+	var state = 0;//状态0，初始菜单阶段。为1，表示是拼写阶段。 2为散花阶段。 3,佐罗出现
+	
+	var type_pinxie = 1; //拼写类型，1表示是整体拼写，初始位置都比较随机。 2表示是有序拼写，初始位置固定某点。3是刷墙出现。4是点击出现。
+	var pinxie_index = 0; //当前正在拼写的笔画，这个用于有序拼写的类型。
+	
 	var labels = new Array(); //组成字的笔画
 	var fenmos = new Array(); //要消失的粉末
 	
 	this.logic = function(){
-		for(var i = labels.length - 1; i >= 0; i--){
-			var l = labels[i];
-			l.logic();
-		}
 		
+		
+		//拼写阶段
 		if(state == 1){
-			var pinxie = checkpinxie();
-			if(pinxie == true)state = 2;
+			
+			if(type_pinxie == 1 || type_pinxie == 3 || type_pinxie == 4){
+				for(var i = labels.length - 1; i >= 0; i--){
+					var l = labels[i];
+					l.logic();
+				}
+				var pinxie = checkpinxie();
+				if(pinxie == true)state = 2;
+			}
+			else if(type_pinxie == 2){
+				var l = labels[pinxie_index];
+				l.logic();
+				if(l.zhongxin_x == 0 && l.zhongxin_y == 0){
+					if(pinxie_index < labels.length - 1){
+						pinxie_index ++;
+					}else{
+						state = 2;
+					}
+				}
+			}
+			
 		}
 		if(state == 2){
 			for(var i = fenmos.length - 1; i >= 0; i--){
@@ -35,8 +55,34 @@ function plj(){
 	}
 
 	this.paint = function(){
+		
+		if(state == 0){
+			context.font = "bold 35px 宋体";  
+			
+			context.fillStyle = "black";  
+            context.fillText("请点击选择：",530,120); 
+            
+			context.strokeRect(520, 180, 250, 60);
+			context.strokeRect(520, 260, 250, 60);
+			context.strokeRect(520, 340, 250, 60);
+			context.strokeRect(520, 420, 250, 60);
+			
+            context.fillStyle = "blue";  
+            context.fillText("一：混拼模式",530,220);  
+            context.fillText("二：书写模式",530,300);  
+            context.fillText("三：刷墙模式",530,380);  
+            context.fillText("四：点击模式",530,460); 
+			return;
+		}
+		
+		
 		//paint label
-		for(var i = 0; i < labels.length;i++){
+		var len = labels.length;
+		if(state == 1 && type_pinxie == 2){
+			len = pinxie_index + 1;
+		}
+		
+		for(var i = 0; i < len;i++){
 			labels[i].paint();
 		}
 		for(var i = fenmos.length - 1; i >= 0; i--){
@@ -62,7 +108,7 @@ function plj(){
 		
 	}
 	var hastip = false;
-	var bahuobali_x = -1000;
+	var bahuobali_x = -1000; //巴霍巴利初始位置
 
 	//定义笔画对象
 	var Label = function(x1,y1,x2,y2){  
@@ -82,19 +128,31 @@ function plj(){
 			this.color = "blue";
 		}
 		
-		//初始位置随机
-		this.zhongxin_x = Math.round(Math.random() * 1000);
-		this.zhongxin_y = Math.round(Math.random() * 1000);
+		//初始位置
+		if(type_pinxie == 1){
+			this.zhongxin_x = Math.round(Math.random() * 1000);
+			this.zhongxin_y = Math.round(Math.random() * 1000);
+			
+			//初始位置的左右上下设置
+			var temp2 = Math.round(Math.random());
+			if(temp2 == 0){
+				this.zhongxin_x = 0 - this.zhongxin_x;
+			}
+			temp2 = Math.round(Math.random());
+			if(temp2 == 0){
+				this.zhongxin_y = 0 - this.zhongxin_y;
+			}
+		}else if(type_pinxie == 2){
+			this.zhongxin_x = 3;
+			this.zhongxin_y = 3;
+		}else if(type_pinxie == 3){
+			this.zhongxin_x = 0 - this.x2;
+			this.zhongxin_y = 0 - this.y2;
+		}else if(type_pinxie == 3){
+			this.zhongxin_x = -100 - this.x2;
+			this.zhongxin_y = -100 - this.y2;
+		}
 		
-		//初始位置的左右上下设置
-		var temp2 = Math.round(Math.random());
-		if(temp2 == 0){
-			this.zhongxin_x = 0 - this.zhongxin_x;
-		}
-		temp2 = Math.round(Math.random());
-		if(temp2 == 0){
-			this.zhongxin_y = 0 - this.zhongxin_y;
-		}
 		
 		
 		//绘制
@@ -115,50 +173,95 @@ function plj(){
 
 
 		this.logic = function(){
-			if(this.zhongxin_x < 0){
-				this.zhongxin_x += 1;
+			if(state == 1 && type_pinxie != 4){
+				var ux = 1;
+				var uy = 1;
+				
+				if(this.zhongxin_x < 0){
+					this.zhongxin_x += ux;
+				}
+				if(this.zhongxin_x > 0){
+					this.zhongxin_x -= ux;
+				}
+				if(this.zhongxin_y < 0){
+					this.zhongxin_y += uy;
+				}
+				if(this.zhongxin_y > 0){
+					this.zhongxin_y -= uy;
+				}
 			}
-			if(this.zhongxin_x > 0){
-				this.zhongxin_x -= 1;
-			}
-			if(this.zhongxin_y < 0){
-				this.zhongxin_y += 1;
-			}
-			if(this.zhongxin_y > 0){
-				this.zhongxin_y -= 1;
-			}
+			
 		}
 	}
+	
+	var pinxie_temp4 = 0; //拼写阶段，点击模式下用来记录已经处理了多少个，当还差10个的时候直接让全部完成。
 
 	//在鼠标点击时，开始执行下一步
 	this.next = function(dx, dy){
 		
-		if(state == 1)return;
+		if(state == 0){
+			if(isDownRect(520, 180, 250, 60)){
+				state = 1;
+				type_pinxie = 1;
+				initLable();
+			}
+			if(isDownRect(520, 260, 250, 60)){
+				state = 1;
+				type_pinxie = 2;
+				initLable();
+			}
+			if(isDownRect(520, 340, 250, 60)){
+				state = 1;
+				type_pinxie = 3;
+				initLable();
+			}
+			if(isDownRect(520, 420, 250, 60)){
+				state = 1;
+				type_pinxie = 4;
+				initLable();
+			}
+			return;
+		}
 		
-		hastip = true;
-		
-		var count = 0;
-		for (var i = labels.length - 1; i > 0; i--)
-		{
-			var temp = labels[i];
-			if(
-				(Math.abs(temp.x1 - dx) < 25 && Math.abs(temp.y1 - dy) < 25) ||
-				(Math.abs(temp.x2 - dx) < 25 && Math.abs(temp.y2 - dy) < 25)
-			){
-				var fenmo = new Fenmo(temp.x1, temp.y1, temp.x2, temp.y2, temp.color);
-				fenmos.push(fenmo);
-				
-				labels.splice(i,1);
-				count = count + 1;
-				if(count > 30){
-					return;
+		//点击模式
+		if(state == 1 && type_pinxie == 4){
+			for (var i = labels.length - 1; i > 0; i--){
+				var temp = labels[i];
+				if(
+					(Math.abs(temp.x1 - dx) < 100 && Math.abs(temp.y1 - dy) < 100) ||
+					(Math.abs(temp.x2 - dx) < 100 && Math.abs(temp.y2 - dy) < 100) || pinxie_temp4 > labels.length - 10
+				){
+					temp.zhongxin_x = 0;
+					temp.zhongxin_y = 0;
+					pinxie_temp4 ++;
 				}
 			}
 		}
-		//说明点击了空地，那就调用另一个方法，花洒花洒。。
-		if(count < 2){
-			huasa();
+		
+		if(state == 2){
+			hastip = true;
+		
+			var count = 0;
+			for (var i = labels.length - 1; i > 0; i--)
+			{
+				var temp = labels[i];
+				if(
+					(Math.abs(temp.x1 - dx) < 30 && Math.abs(temp.y1 - dy) < 30) ||
+					(Math.abs(temp.x2 - dx) < 30 && Math.abs(temp.y2 - dy) < 30)
+				){
+					var fenmo = new Fenmo(temp.x1, temp.y1, temp.x2, temp.y2, temp.color);
+					fenmos.push(fenmo);
+					
+					labels.splice(i,1);
+					count = count + 1;
+				}
+			}
+			//说明点击了空地，那就调用另一个方法，花洒花洒。。
+			if(count < 2){
+				huasa();
+			}
 		}
+		
 	};
 
 
@@ -169,6 +272,9 @@ function plj(){
 			var len = labels.length;
 			
 			var ran = Math.round(Math.random() * len);
+			if(len < 20){
+				ran = 0;
+			}
 			var temp = labels[ran];
 			
 			var fenmo = new Fenmo(temp.x1, temp.y1, temp.x2, temp.y2, temp.color);
@@ -261,7 +367,7 @@ function plj(){
 
 
 
-
+	function initLable(){
 
 
 
@@ -586,7 +692,7 @@ labels.push(new Label(1147,390,1149,390));labels.push(new Label(1149,390,1156,39
 labels.push(new Label(1317,296,1316,297));labels.push(new Label(1316,297,1316,305));labels.push(new Label(1316,305,1315,309));labels.push(new Label(1315,309,1314,317));labels.push(new Label(1314,317,1313,325));labels.push(new Label(1313,325,1311,333));labels.push(new Label(1311,333,1310,342));labels.push(new Label(1310,342,1307,351));labels.push(new Label(1307,351,1306,359));labels.push(new Label(1306,359,1305,368));labels.push(new Label(1305,368,1303,375));labels.push(new Label(1303,375,1303,381));labels.push(new Label(1303,381,1302,388));labels.push(new Label(1302,388,1302,394));labels.push(new Label(1302,394,1300,402));labels.push(new Label(1300,402,1300,408));labels.push(new Label(1300,408,1299,413));labels.push(new Label(1299,413,1298,417));labels.push(new Label(1298,417,1298,420));labels.push(new Label(1298,420,1297,425));labels.push(new Label(1297,425,1297,428));labels.push(new Label(1297,428,1297,429));labels.push(new Label(1297,429,1296,430));labels.push(new Label(1296,430,1296,431));
 labels.push(new Label(1294,454,1294,455));labels.push(new Label(1294,455,1294,456));labels.push(new Label(1294,456,1294,457));labels.push(new Label(1294,457,1294,458));labels.push(new Label(1294,458,1295,459));labels.push(new Label(1295,459,1295,460));labels.push(new Label(1295,460,1295,461));
 
-
+}
 
 
 }
