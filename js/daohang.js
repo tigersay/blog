@@ -9,7 +9,7 @@
 			"<li><a href=\"http://tigersay.github.io/blog/work/work_17_07_09.html\" target='_blank'>Work</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/book\" target='_blank'>Book</a></li>" +
 			"<li><a href=\"http://tigersay.github.io/blog/tgcl\" target='_blank'>Tgcl</a></li>" +
-			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_19_03.html\">Weibo</a></li>" +
+			"<li><a href=\"http://tigersay.github.io/blog/weibo/weibo_20_04.html\">Weibo</a></li>" +
 			"</ul></div>";
 }
 
