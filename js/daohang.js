@@ -96,7 +96,9 @@ function createWeiboMonthMenu(currMonth){
 	"<div class=\"bannian\">" +
 	"<span id=\"19_01\" class=\"month\"><a href=\"weibo_19_01.html\">2019年1月</a></span>"  +
 	"<span id=\"19_02\" class=\"month\"><a href=\"weibo_19_02.html\">2019年2月</a></span>"  +
-	"<span id=\"19_03\" class=\"month\"><a href=\"weibo_19_03.html\">2019年3月</a></span>" 
+	"<span id=\"19_03\" class=\"month\"><a href=\"weibo_19_03.html\">2019年3月</a></span>"  +
+	"<span id=\"19_04\" class=\"month\"><a href=\"weibo_19_04.html\">2019年4月</a></span>"  +
+	"<span id=\"20_04\" class=\"month\"><a href=\"weibo_20_04.html\">2020年4月</a></span>"  
 	;
 	
 	
